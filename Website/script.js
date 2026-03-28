@@ -1,48 +1,100 @@
-let pacman = document.getElementById("pacman");
+document.addEventListener('DOMContentLoaded', () => {
+    const statsSection = document.getElementById('stats');
+    const bars = document.querySelectorAll('.skill-bar');
 
-let progress = 0;
+    if (statsSection && bars.length) {
+        const resetBars = () => {
+            bars.forEach((bar) => {
+                bar.style.transition = 'none';
+                bar.style.width = '0';
+            });
+        };
 
-let path = [
-{x:100,y:150},
-{x:600,y:300},
-{x:300,y:700},
-{x:900,y:1100},
-{x:200,y:1600},
-{x:1000,y:2200}
-];
+        const animateBars = () => {
+            bars.forEach((bar) => {
+                const target = bar.dataset.level || '0';
+                bar.style.transition = 'width 1.2s ease-out';
+                requestAnimationFrame(() => {
+                    bar.style.width = `${target}%`;
+                });
+            });
+        };
 
-window.addEventListener("wheel",(e)=>{
+        resetBars();
 
-progress += Math.abs(e.deltaY)*0.002;
+        const statsObserver = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    animateBars();
+                } else {
+                    resetBars();
+                }
+            },
+            { threshold: 0.35 }
+        );
 
-movePacman(progress);
+        statsObserver.observe(statsSection);
+    }
 
+    const experienceSection = document.getElementById('experience');
+    const timelineContainer = document.getElementById('timeline-container');
+    const dot = document.getElementById('scroll-dot');
+    const timelineItems = Array.from(document.querySelectorAll('.timeline-item'));
+
+    if (!experienceSection || !timelineContainer || !dot || timelineItems.length < 3) return;
+
+    let itemCenters = [];
+
+    const measureItemCenters = () => {
+        const trackRect = timelineContainer.getBoundingClientRect();
+        const trackHeight = timelineContainer.offsetHeight;
+
+        itemCenters = timelineItems.map((item) => {
+            const itemRect = item.getBoundingClientRect();
+            const itemCenter = itemRect.top + itemRect.height / 2 - trackRect.top;
+            const dotMax = Math.max(0, trackHeight - dot.offsetHeight);
+
+            return Math.max(0, Math.min(dotMax, itemCenter - dot.offsetHeight / 2));
+        });
+    };
+
+    const setActiveItem = (index) => {
+        const activeIndex = Math.max(0, Math.min(timelineItems.length - 1, index));
+
+        timelineItems.forEach((item, i) => {
+            item.classList.toggle('is-active', i === activeIndex);
+        });
+
+        if (itemCenters.length) {
+            dot.style.top = `${itemCenters[activeIndex]}px`;
+        }
+    };
+
+    const updateTimeline = () => {
+        const rect = experienceSection.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const sectionHeight = experienceSection.offsetHeight;
+
+        const totalRange = viewportHeight + sectionHeight;
+        const scrolled = viewportHeight - rect.top;
+        const progress = Math.max(0, Math.min(1, scrolled / totalRange));
+
+        // Use 3 zones, but align the dot to the real item centers
+        let activeIndex = 0;
+        if (progress >= 0.34 && progress < 0.67) {
+            activeIndex = 1;
+        } else if (progress >= 0.67) {
+            activeIndex = 2;
+        }
+
+        measureItemCenters();
+        setActiveItem(activeIndex);
+    };
+
+    measureItemCenters();
+    setActiveItem(0);
+    updateTimeline();
+
+    window.addEventListener('scroll', updateTimeline, { passive: true });
+    window.addEventListener('resize', updateTimeline);
 });
-
-
-function movePacman(t){
-
-let index = Math.floor(t)%path.length;
-let next = (index+1)%path.length;
-
-let lerp = t - Math.floor(t);
-
-let x = path[index].x + (path[next].x - path[index].x)*lerp;
-let y = path[index].y + (path[next].y - path[index].y)*lerp;
-
-pacman.style.transform =
-`translate(${x}px,${y}px)`;
-
-}
-
-const watchButton = document.getElementById("watchButton");
-const videoContainer = document.getElementById("videoContainer");
-const demoVideo = document.getElementById("demoVideo");
-
-if (watchButton && videoContainer && demoVideo) {
-    watchButton.addEventListener("click", () => {
-        videoContainer.style.display = "block";
-        demoVideo.play();
-        watchButton.style.display = "none";
-    });
-}
