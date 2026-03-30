@@ -13,8 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const animateBars = () => {
             bars.forEach((bar) => {
                 const target = bar.dataset.level || '0';
-                bar.style.transition = 'width 1.2s ease-out';
+
+                bar.style.transition = 'none';
+                bar.style.width = '0';
+
                 requestAnimationFrame(() => {
+                    bar.style.transition = 'width 1.2s cubic-bezier(0.1, 0.7, 0.1, 1)';
                     bar.style.width = `${target}%`;
                 });
             });
@@ -30,7 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     resetBars();
                 }
             },
-            { threshold: 0.35 }
+            {
+                threshold: 0.35
+            }
         );
 
         statsObserver.observe(statsSection);
@@ -79,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrolled = viewportHeight - rect.top;
         const progress = Math.max(0, Math.min(1, scrolled / totalRange));
 
-        // Use 3 zones, but align the dot to the real item centers
         let activeIndex = 0;
         if (progress >= 0.34 && progress < 0.67) {
             activeIndex = 1;
