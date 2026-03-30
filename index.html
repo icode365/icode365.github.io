@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>PLAYER_1 // UNITY DEVELOPER PORTFOLIO</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script src="script.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
-          rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-          rel="stylesheet"/>
-    <link rel="stylesheet" href="styles.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -83,23 +80,15 @@
 
 <!-- TopAppBar -->
 <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-20 bg-background/80 backdrop-blur-md border-b-4 border-[#353535] shadow-[0_4px_0_0_rgba(234,234,0,0.2)]">
-    <div class="text-2xl font-black text-[#eaea00] tracking-widest font-space-grotesk uppercase tracking-tighter">
-        PLAYER_1
-    </div>
+    <div class="text-2xl font-black text-[#eaea00] tracking-widest font-space-grotesk uppercase tracking-tighter">PLAYER_1</div>
     <div class="hidden md:flex gap-8 items-center h-full">
-        <a class="font-space-grotesk uppercase tracking-tighter text-[#eaea00] border-b-4 border-[#eaea00] pb-1 hover:bg-[#353535]/50 transition-colors duration-100 active:translate-y-1"
-           href="#hero">STAGES</a>
-        <a class="font-space-grotesk uppercase tracking-tighter text-[#e2e2e2] hover:text-[#00fbfb] hover:bg-[#353535]/50 transition-colors duration-100 active:translate-y-1"
-           href="#stats">STATS</a>
-        <a class="font-space-grotesk uppercase tracking-tighter text-[#e2e2e2] hover:text-[#00fbfb] hover:bg-[#353535]/50 transition-colors duration-100 active:translate-y-1"
-           href="#lore">LORE</a>
-        <a class="font-space-grotesk uppercase tracking-tighter text-[#e2e2e2] hover:text-[#00fbfb] hover:bg-[#353535]/50 transition-colors duration-100 active:translate-y-1"
-           href="#contact">MISSION</a>
+        <a class="font-space-grotesk uppercase tracking-tighter text-[#eaea00] border-b-4 border-[#eaea00] pb-1 hover:bg-[#353535]/50 transition-colors duration-100 active:translate-y-1" href="#hero">STAGES</a>
+        <a class="font-space-grotesk uppercase tracking-tighter text-[#e2e2e2] hover:text-[#00fbfb] hover:bg-[#353535]/50 transition-colors duration-100 active:translate-y-1" href="#stats">STATS</a>
+        <a class="font-space-grotesk uppercase tracking-tighter text-[#e2e2e2] hover:text-[#00fbfb] hover:bg-[#353535]/50 transition-colors duration-100 active:translate-y-1" href="#lore">LORE</a>
+        <a class="font-space-grotesk uppercase tracking-tighter text-[#e2e2e2] hover:text-[#00fbfb] hover:bg-[#353535]/50 transition-colors duration-100 active:translate-y-1" href="#contact">MISSION</a>
     </div>
     <div class="flex items-center gap-4">
-        <button class="bg-primary-fixed text-on-primary-fixed px-6 py-2 font-black font-space-grotesk tracking-widest border-b-4 border-on-primary-container active:translate-y-1 transition-all shadow-[0_0_15px_rgba(234,234,0,0.3)]">
-            INSERT COIN
-        </button>
+        <button class="bg-primary-fixed text-on-primary-fixed px-6 py-2 font-black font-space-grotesk tracking-widest border-b-4 border-on-primary-container active:translate-y-1 transition-all shadow-[0_0_15px_rgba(234,234,0,0.3)]">INSERT COIN</button>
         <div class="flex gap-2">
             <span class="material-symbols-outlined text-[#eaea00] cursor-pointer hover:bg-surface-container-high p-2">videogame_asset</span>
             <span class="material-symbols-outlined text-[#eaea00] cursor-pointer hover:bg-surface-container-high p-2">settings</span>
@@ -108,358 +97,303 @@
 </nav>
 
 <main class="pt-20">
-    <!-- Section 1: Hero Section -->
-    <section class="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden pixel-grid"
-             id="hero">
-        <div class="absolute inset-0 scanline z-10"></div>
-        <div class="z-20 text-center max-w-4xl">
-            <div class="mb-8 inline-block p-4 border-4 border-secondary-fixed bg-surface-container-high/80 backdrop-blur-xl shadow-[8px_8px_0_0_#00fbfb]">
-                <img alt="Retro Arcade Sprite" class="w-64 h-64 object-cover grayscale brightness-125 contrast-150"
-                     data-alt="Digital pixel art illustration of a retro gaming controller glowing with cyan and magenta neon light against a dark technical background"
-                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5JrkMWYH7zJPIHN1XZ81GotH9TT7EmrtaPGi-dJQbnvp9yIY3AJtHKaxaIPH1j84jbyn_WBFEUbLt21eSJqCxDzw-Ap7OT_wjwRjeGprS_D262QV0kL-K7NmXWtU75LXoUUbVD2jqa6yH2Gz2edkv0qdrgpwAjPbRBTYwbZROuNwl7eFfQoL7upO_RBTkNH1H6qTvBMS2Y33dJTt8ko3ABhXg_-S6onu2fTRxG4dj5gCELPeZIipxOa6_7qPshXS8lp98VikO6pFJ"/>
-            </div>
-            <h1 class="text-6xl md:text-8xl font-black font-headline uppercase tracking-tighter text-primary-fixed mb-4 drop-shadow-[4px_4px_0_rgba(204,1,0,1)]">
-                PLAYER 1: <span class="text-white">ASHUTOSH</span>
-            </h1>
-            <p class="text-xl md:text-2xl font-label uppercase tracking-[0.2em] text-secondary-fixed mb-12 drop-shadow-[0_0_10px_rgba(0,251,251,0.5)]">
-                Unity Developer
-            </p>
-            <div class="flex flex-col md:flex-row gap-6 justify-center">
-                <button class="bg-primary-fixed text-on-primary-fixed text-2xl px-12 py-4 font-black font-space-grotesk tracking-widest border-b-8 border-on-primary-container hover:brightness-110 active:translate-y-2 active:border-b-0 transition-all shadow-[0_0_20px_rgba(234,234,0,0.4)]">
-                    PRESS START
-                </button>
-                <button class="border-4 border-outline-variant text-on-background text-2xl px-12 py-4 font-black font-space-grotesk tracking-widest hover:bg-surface-container-highest/50 backdrop-blur transition-all">
-                    LOAD GAME
-                </button>
-            </div>
-        </div>
-        <!-- Floating Decoration -->
-        <div class="absolute bottom-10 right-10 hidden lg:block opacity-20">
-            <span class="material-symbols-outlined text-9xl text-primary-fixed"
-                  style="font-variation-settings: 'FILL' 1;">sports_esports</span>
-        </div>
-    </section>
-    <!-- Section 2: Qualifications -->
-    <section class="py-24 px-6 relative" id="stats">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-black font-headline uppercase tracking-tighter mb-16 border-l-8 border-primary-fixed pl-6">
-                CHARACTER STATS</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <!-- Left Column: Primary Skills -->
-                <div class="space-y-8 glass-panel p-8">
-                    <div>
-                        <div class="flex justify-between items-end mb-2">
-                            <div class="flex items-center gap-3">
-                                <span class="material-symbols-outlined text-secondary-fixed">category</span>
-                                <span class="font-label uppercase font-bold text-lg">Unity Engine</span>
-                            </div>
-                            <span class="text-secondary-fixed font-mono">LVL 95</span>
-                        </div>
-                        <div class="h-8 bg-surface-container-highest/50 flex p-1 border-2 border-surface-bright backdrop-blur">
-                            <div class="skill-bar h-full bg-secondary-fixed" data-level="95"
-                                 style="width: 0; box-shadow: 0 0 10px #00fbfb;"></div>
-                            <div class="h-full w-[5%] bg-transparent"></div>
-                        </div>
-                    </div>
+<!-- Section 1: Hero Section -->
+<section class="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden pixel-grid" id="hero">
+<div class="absolute inset-0 scanline z-10"></div>
+<div class="z-20 text-center max-w-4xl">
+<div class="mb-8 inline-block p-4 border-4 border-secondary-fixed bg-surface-container-high/80 backdrop-blur-xl shadow-[8px_8px_0_0_#00fbfb]">
+<img alt="Retro Arcade Sprite" class="w-64 h-64 object-cover grayscale brightness-125 contrast-150" data-alt="Digital pixel art illustration of a retro gaming controller glowing with cyan and magenta neon light against a dark technical background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5JrkMWYH7zJPIHN1XZ81GotH9TT7EmrtaPGi-dJQbnvp9yIY3AJtHKaxaIPH1j84jbyn_WBFEUbLt21eSJqCxDzw-Ap7OT_wjwRjeGprS_D262QV0kL-K7NmXWtU75LXoUUbVD2jqa6yH2Gz2edkv0qdrgpwAjPbRBTYwbZROuNwl7eFfQoL7upO_RBTkNH1H6qTvBMS2Y33dJTt8ko3ABhXg_-S6onu2fTRxG4dj5gCELPeZIipxOa6_7qPshXS8lp98VikO6pFJ"/>
+</div>
+<h1 class="text-6xl md:text-8xl font-black font-headline uppercase tracking-tighter text-primary-fixed mb-4 drop-shadow-[4px_4px_0_rgba(204,1,0,1)]">
+                    PLAYER 1: <span class="text-white">ASHUTOSH</span>
+</h1>
+<p class="text-xl md:text-2xl font-label uppercase tracking-[0.2em] text-secondary-fixed mb-12 drop-shadow-[0_0_10px_rgba(0,251,251,0.5)]">
+                    Unity Developer
+                </p>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="bg-primary-fixed text-on-primary-fixed text-2xl px-12 py-4 font-black font-space-grotesk tracking-widest border-b-8 border-on-primary-container hover:brightness-110 active:translate-y-2 active:border-b-0 transition-all shadow-[0_0_20px_rgba(234,234,0,0.4)]">
+                        PRESS START
+                    </button>
+<button class="border-4 border-outline-variant text-on-background text-2xl px-12 py-4 font-black font-space-grotesk tracking-widest hover:bg-surface-container-highest/50 backdrop-blur transition-all">
+                        LOAD GAME
+                    </button>
+</div>
+</div>
+<!-- Floating Decoration -->
+<div class="absolute bottom-10 right-10 hidden lg:block opacity-20">
+<span class="material-symbols-outlined text-9xl text-primary-fixed" style="font-variation-settings: 'FILL' 1;">sports_esports</span>
+</div>
+</section>
+<!-- Section 2: Qualifications -->
+<section class="py-24 px-6 relative" id="stats">
+<div class="max-w-6xl mx-auto">
+<h2 class="text-4xl font-black font-headline uppercase tracking-tighter mb-16 border-l-8 border-primary-fixed pl-6">CHARACTER STATS</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Left Column: Primary Skills -->
+<div class="space-y-8 glass-panel p-8">
+  <div>
+    <div class="flex justify-between items-end mb-2">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-secondary-fixed">category</span>
+        <span class="font-label uppercase font-bold text-lg">Unity Engine</span>
+      </div>
+      <span class="text-secondary-fixed font-mono">LVL 95</span>
+    </div>
+    <div class="h-8 bg-surface-container-highest/50 flex p-1 border-2 border-surface-bright backdrop-blur">
+      <div class="skill-bar h-full bg-secondary-fixed" data-level="95" style="width: 0; box-shadow: 0 0 10px #00fbfb;"></div>
+      <div class="h-full w-[5%] bg-transparent"></div>
+    </div>
+  </div>
 
-                    <div>
-                        <div class="flex justify-between items-end mb-2">
-                            <div class="flex items-center gap-3">
-                                <span class="material-symbols-outlined text-secondary-fixed">terminal</span>
-                                <span class="font-label uppercase font-bold text-lg">C# Scripting</span>
-                            </div>
-                            <span class="text-secondary-fixed font-mono">LVL 88</span>
-                        </div>
-                        <div class="h-8 bg-surface-container-highest/50 flex p-1 border-2 border-surface-bright backdrop-blur">
-                            <div class="skill-bar h-full bg-secondary-fixed" data-level="88"
-                                 style="width: 0; box-shadow: 0 0 10px #00fbfb;"></div>
-                            <div class="h-full w-[12%] bg-transparent"></div>
-                        </div>
-                    </div>
+  <div>
+    <div class="flex justify-between items-end mb-2">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-secondary-fixed">terminal</span>
+        <span class="font-label uppercase font-bold text-lg">C# Scripting</span>
+      </div>
+      <span class="text-secondary-fixed font-mono">LVL 88</span>
+    </div>
+    <div class="h-8 bg-surface-container-highest/50 flex p-1 border-2 border-surface-bright backdrop-blur">
+      <div class="skill-bar h-full bg-secondary-fixed" data-level="88" style="width: 0; box-shadow: 0 0 10px #00fbfb;"></div>
+      <div class="h-full w-[12%] bg-transparent"></div>
+    </div>
+  </div>
 
-                    <div>
-                        <div class="flex justify-between items-end mb-2">
-                            <div class="flex items-center gap-3">
-                                <span class="material-symbols-outlined text-secondary-fixed">3d_rotation</span>
-                                <span class="font-label uppercase font-bold text-lg">Blender 3D</span>
-                            </div>
-                            <span class="text-tertiary-fixed-dim font-mono">LVL 72</span>
-                        </div>
-                        <div class="h-8 bg-surface-container-highest/50 flex p-1 border-2 border-surface-bright backdrop-blur">
-                            <div class="skill-bar h-full bg-tertiary-fixed-dim" data-level="72"
-                                 style="width: 0; box-shadow: 0 0 10px #ffb4a8;"></div>
-                            <div class="h-full w-[28%] bg-transparent"></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Right Column: Secondary Attributes -->
-                <div class="grid grid-cols-2 gap-6">
-                    <div class="glass-panel p-6 border-b-4 border-primary-fixed">
-                        <span class="material-symbols-outlined text-primary-fixed mb-4"
-                              style="font-variation-settings: 'FILL' 1;">bolt</span>
-                        <h3 class="font-label uppercase font-bold mb-1">STAMINA</h3>
-                        <p class="text-xs opacity-70">Long-term project endurance and deadline mastery.</p>
-                    </div>
-                    <div class="glass-panel p-6 border-b-4 border-secondary-fixed">
-                        <span class="material-symbols-outlined text-secondary-fixed mb-4"
-                              style="font-variation-settings: 'FILL' 1;">psychology</span>
-                        <h3 class="font-label uppercase font-bold mb-1">LOGIC</h3>
-                        <p class="text-xs opacity-70">Complex algorithm optimization and bug hunting.</p>
-                    </div>
-                    <div class="glass-panel p-6 border-b-4 border-tertiary-fixed-dim">
-                        <span class="material-symbols-outlined text-tertiary-fixed-dim mb-4"
-                              style="font-variation-settings: 'FILL' 1;">draw</span>
-                        <h3 class="font-label uppercase font-bold mb-1">DESIGN</h3>
-                        <p class="text-xs opacity-70">UI/UX intuition for immersive player experiences.</p>
-                    </div>
-                    <div class="glass-panel p-6 border-b-4 border-on-secondary-container">
-                        <span class="material-symbols-outlined text-on-secondary-container mb-4"
-                              style="font-variation-settings: 'FILL' 1;">groups</span>
-                        <h3 class="font-label uppercase font-bold mb-1">CO-OP</h3>
-                        <p class="text-xs opacity-70">Agile workflows and multi-disciplinary team sync.</p>
-                    </div>
-                </div>
-            </div>
+  <div>
+    <div class="flex justify-between items-end mb-2">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-secondary-fixed">3d_rotation</span>
+        <span class="font-label uppercase font-bold text-lg">Blender 3D</span>
+      </div>
+      <span class="text-tertiary-fixed-dim font-mono">LVL 72</span>
+    </div>
+    <div class="h-8 bg-surface-container-highest/50 flex p-1 border-2 border-surface-bright backdrop-blur">
+      <div class="skill-bar h-full bg-tertiary-fixed-dim" data-level="72" style="width: 0; box-shadow: 0 0 10px #ffb4a8;"></div>
+      <div class="h-full w-[28%] bg-transparent"></div>
+    </div>
+  </div>
+</div>
+<!-- Right Column: Secondary Attributes -->
+<div class="grid grid-cols-2 gap-6">
+<div class="glass-panel p-6 border-b-4 border-primary-fixed">
+<span class="material-symbols-outlined text-primary-fixed mb-4" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<h3 class="font-label uppercase font-bold mb-1">STAMINA</h3>
+<p class="text-xs opacity-70">Long-term project endurance and deadline mastery.</p>
+</div>
+<div class="glass-panel p-6 border-b-4 border-secondary-fixed">
+<span class="material-symbols-outlined text-secondary-fixed mb-4" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<h3 class="font-label uppercase font-bold mb-1">LOGIC</h3>
+<p class="text-xs opacity-70">Complex algorithm optimization and bug hunting.</p>
+</div>
+<div class="glass-panel p-6 border-b-4 border-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-tertiary-fixed-dim mb-4" style="font-variation-settings: 'FILL' 1;">draw</span>
+<h3 class="font-label uppercase font-bold mb-1">DESIGN</h3>
+<p class="text-xs opacity-70">UI/UX intuition for immersive player experiences.</p>
+</div>
+<div class="glass-panel p-6 border-b-4 border-on-secondary-container">
+<span class="material-symbols-outlined text-on-secondary-container mb-4" style="font-variation-settings: 'FILL' 1;">groups</span>
+<h3 class="font-label uppercase font-bold mb-1">CO-OP</h3>
+<p class="text-xs opacity-70">Agile workflows and multi-disciplinary team sync.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Projects -->
+<section class="py-24 px-6 pixel-grid" id="projects">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-16">
+<h2 class="text-4xl font-black font-headline uppercase tracking-tighter border-l-8 border-secondary-fixed pl-6">LEVEL SELECTION</h2>
+<span class="font-mono text-secondary-fixed hidden md:block">SELECT_STAGE_01-06</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project Card 1 -->
+<div class="group glass-panel shadow-[4px_4px_0_0_#353535] hover:shadow-[12px_12px_0_0_#eaea00] transition-all overflow-hidden border-2 border-secondary-fixed/30">
+<div class="relative aspect-video">
+<img alt="Cyberpunk Game Scene" class="w-full h-full object-cover" data-alt="High-contrast game engine screenshot of a rainy cyberpunk neon street with glowing puddles and futuristic architecture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5OLU-0xMH87LwGQwhhj7U13_kFsetvpIVl62tgVkCxjjPqaIBDYPk6aop1FopCFz7lOLOgtjrKeUMLkYP5N7ex4FoDtZmkCF7E1OngNEE34hHcSvfmGctCzTHxnhvQuyV4qGk7pHieU3x09mdT3As5n5ObHMNtaH2KIOJFKoDZVIDpMMdX6JWlO8OHYZHvnBEVZdAdbKvI5aY5CmzHnkDP_RPzJ1gQHbQwQ_askRU9CaxIrMY0a0CbsxC5D6b3dSRzRGqz67EXrfy"/>
+<div class="absolute top-4 right-4 bg-primary-fixed text-on-primary-fixed px-3 py-1 font-bold text-xs shadow-lg">STAGE 01</div>
+</div>
+<div class="p-6">
+<h3 class="text-2xl font-black font-headline uppercase mb-2">NEON_DRIFT_2099</h3>
+<p class="text-sm opacity-80 mb-6">A high-octane procedural racing engine built in Unity HDRP with custom physics controllers.</p>
+<button class="w-full bg-primary-fixed text-on-primary-fixed font-black py-3 border-b-4 border-on-primary-container group-hover:bg-white transition-colors">PLAY PROJECT</button>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="group glass-panel shadow-[4px_4px_0_0_#353535] hover:shadow-[12px_12px_0_0_#eaea00] transition-all overflow-hidden border-2 border-secondary-fixed/30">
+<div class="relative aspect-video">
+<img alt="Voxel World" class="w-full h-full object-cover" data-alt="Vibrant voxel-based fantasy world with a small hero character standing on a cliff overlooking a blocky forest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvhaLCqIoGCmkybb25jJA97vMzwTO6K5Zxqfob4_zHoG6Q0L9LQqkso-b6IYBWw0iercaSVnB4D16R5gZXbi9CF_KPcDGBbciGuK_t-fsERIDFg3tjS8HirSZGGXo_Nv1_NNB-t0KEPU8NTLv5do9dpIpyWJTGV0i7Qu_iqxbURtxsK2ijPG25SVEPWkFyFLCX-4TQZkjg9duKfLVC1yRrbHbvpraKyT4SF_QFZYXXIPDQFUClW6PQXQAPMqTQAxjRzO-8C2EWlqAH"/>
+<div class="absolute top-4 right-4 bg-primary-fixed text-on-primary-fixed px-3 py-1 font-bold text-xs shadow-lg">STAGE 02</div>
+</div>
+<div class="p-6">
+<h3 class="text-2xl font-black font-headline uppercase mb-2">BLOCK_QUEST_VR</h3>
+<p class="text-sm opacity-80 mb-6">VR dungeon crawler featuring interactive physics-based combat and procedural loot generation.</p>
+<button class="w-full bg-primary-fixed text-on-primary-fixed font-black py-3 border-b-4 border-on-primary-container group-hover:bg-white transition-colors">PLAY PROJECT</button>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="group glass-panel shadow-[4px_4px_0_0_#353535] hover:shadow-[12px_12px_0_0_#eaea00] transition-all overflow-hidden border-2 border-secondary-fixed/30">
+<div class="relative aspect-video">
+<img alt="Sci-Fi Console" class="w-full h-full object-cover" data-alt="Close up of a sci-fi computer interface with scrolling green code and circular data visualizations" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAnRtPTtgkU0TCv5ziNc5p1-Q-OBj-iox6B6AzdMypGNCidXt7LV1M6lJD0h6yqsP0DSZFV65L4zyMrRvMqF4iioaQocX-qoo4aigl3SMUONyMdqScC37o_H0cWdZDE5K7zv_3eeAVLzqIEE-s64SdYA91DjBYYlkEKiERouK221wXAxgvvIUuU-mJW-JBRTO46_xGiPilo5pn22TdemayztvxIIyfG92IFtijHrYSvopwEJ1oQbQBOm4sq3wt0p9XviGXRGaHxzjj"/>
+<div class="absolute top-4 right-4 bg-primary-fixed text-on-primary-fixed px-3 py-1 font-bold text-xs shadow-lg">STAGE 03</div>
+</div>
+<div class="p-6">
+<h3 class="text-2xl font-black font-headline uppercase mb-2">VOID_COMMANDER</h3>
+<p class="text-sm opacity-80 mb-6">Real-time strategy engine supporting 10,000+ units using Unity DOTS and ECS architecture.</p>
+<button class="w-full bg-primary-fixed text-on-primary-fixed font-black py-3 border-b-4 border-on-primary-container group-hover:bg-white transition-colors">PLAY PROJECT</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Experience -->
+<section class="experience-stage relative" id="experience">
+  <div class="experience-pin glass-panel">
+    <h2 class="text-4xl font-black font-headline uppercase tracking-tighter mb-20 text-center text-[#eaea00]">MISSION HISTORY</h2>
+
+    <div class="relative timeline-track" id="timeline-container">
+      <!-- Vertical Path -->
+      <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-2 bg-surface-container-highest/50 border-x-2 border-surface-bright/50"></div>
+
+      <!-- Scroll Synced Dot -->
+      <div class="absolute left-1/2 -translate-x-1/2 w-8 h-8 bg-primary-fixed rounded-full z-20 top-0 border-4 border-black" id="scroll-dot"></div>
+
+      <!-- Timeline Events -->
+      <div class="timeline-events relative z-10">
+        <!-- Item 1 -->
+        <div class="timeline-item flex flex-col md:flex-row items-center gap-8">
+          <div class="flex-1 md:text-right">
+            <h3 class="timeline-title text-2xl font-black font-headline uppercase text-primary-fixed drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">Lead Game Dev</h3>
+            <p class="text-secondary-fixed font-bold">NEBULAS STUDIOS // 2022 - PRESENT</p>
+            <p class="mt-2 text-sm opacity-80">Leading a team of 12 for an unannounced AA title. Architected the core combat system.</p>
+          </div>
+          <div class="w-12 h-12 bg-primary-fixed border-4 border-black flex items-center justify-center shadow-[0_0_15px_#eaea00]">
+            <span class="material-symbols-outlined text-black font-bold"></span>
+          </div>
+          <div class="flex-1 hidden md:block"></div>
         </div>
-    </section>
-    <!-- Section 3: Projects -->
-    <section class="py-24 px-6 pixel-grid" id="projects">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex justify-between items-end mb-16">
-                <h2 class="text-4xl font-black font-headline uppercase tracking-tighter border-l-8 border-secondary-fixed pl-6">
-                    LEVEL SELECTION</h2>
-                <span class="font-mono text-secondary-fixed hidden md:block">SELECT_STAGE_01-06</span>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project Card 1 -->
-                <div class="group glass-panel shadow-[4px_4px_0_0_#353535] hover:shadow-[12px_12px_0_0_#eaea00] transition-all overflow-hidden border-2 border-secondary-fixed/30">
-                    <div class="relative aspect-video">
-                        <img alt="Cyberpunk Game Scene" class="w-full h-full object-cover"
-                             data-alt="High-contrast game engine screenshot of a rainy cyberpunk neon street with glowing puddles and futuristic architecture"
-                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5OLU-0xMH87LwGQwhhj7U13_kFsetvpIVl62tgVkCxjjPqaIBDYPk6aop1FopCFz7lOLOgtjrKeUMLkYP5N7ex4FoDtZmkCF7E1OngNEE34hHcSvfmGctCzTHxnhvQuyV4qGk7pHieU3x09mdT3As5n5ObHMNtaH2KIOJFKoDZVIDpMMdX6JWlO8OHYZHvnBEVZdAdbKvI5aY5CmzHnkDP_RPzJ1gQHbQwQ_askRU9CaxIrMY0a0CbsxC5D6b3dSRzRGqz67EXrfy"/>
-                        <div class="absolute top-4 right-4 bg-primary-fixed text-on-primary-fixed px-3 py-1 font-bold text-xs shadow-lg">
-                            STAGE 01
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-black font-headline uppercase mb-2">NEON_DRIFT_2099</h3>
-                        <p class="text-sm opacity-80 mb-6">A high-octane procedural racing engine built in Unity HDRP
-                            with custom physics controllers.</p>
-                        <button class="w-full bg-primary-fixed text-on-primary-fixed font-black py-3 border-b-4 border-on-primary-container group-hover:bg-white transition-colors">
-                            PLAY PROJECT
+
+        <!-- Item 2 -->
+        <div class="timeline-item flex flex-col md:flex-row items-center gap-8">
+          <div class="flex-1 hidden md:block"></div>
+          <div class="w-12 h-12 bg-secondary-fixed border-4 border-black flex items-center justify-center shadow-[0_0_15px_#00fbfb]">
+            <span class="material-symbols-outlined text-black font-bold"></span>
+          </div>
+          <div class="flex-1 text-left">
+            <h3 class="timeline-title text-2xl font-black font-headline uppercase text-primary-fixed drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">Senior Level Designer</h3>
+            <p class="text-secondary-fixed font-bold">ARCADE REVOLUTION // 2019 - 2022</p>
+            <p class="mt-2 text-sm opacity-80">Designed 15+ levels for 'VaporCity'. Optimized performance for mobile VR platforms.</p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="timeline-item flex flex-col md:flex-row items-center gap-8">
+          <div class="flex-1 md:text-right">
+            <h3 class="timeline-title text-2xl font-black font-headline uppercase text-primary-fixed drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">Junior Developer</h3>
+            <p class="text-secondary-fixed font-bold">PIXEL LABS // 2017 - 2019</p>
+            <p class="mt-2 text-sm opacity-80">Implemented gameplay mechanics and UI systems for various indie mobile games.</p>
+          </div>
+          <div class="w-12 h-12 bg-tertiary-fixed-dim border-4 border-black flex items-center justify-center shadow-[0_0_15px_#ffb4a8]">
+            <span class="material-symbols-outlined text-black font-bold"></span>
+          </div>
+          <div class="flex-1 hidden md:block"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section 5: Blogs -->
+<section class="py-24 px-6 relative" id="lore">
+<div class="max-w-7xl mx-auto glass-panel p-12 border-secondary-fixed/30">
+<div class="flex items-center gap-4 mb-16">
+<span class="material-symbols-outlined text-4xl text-tertiary-fixed-dim">auto_stories</span>
+<h2 class="text-4xl font-black font-headline uppercase tracking-tighter">LATEST LORE</h2>
+<div class="flex-grow h-1 bg-surface-container-highest/50"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Article 1 -->
+<article class="bg-surface-container-high/40 backdrop-blur-md p-4 border-t-4 border-on-secondary-container hover:bg-surface-container-high/80 transition-all border-x border-b border-white/5">
+<img alt="Code Close up" class="w-full aspect-square object-cover mb-4 contrast-125 grayscale hover:grayscale-0 transition-all" data-alt="Blurred close up of complex computer code on a monitor with vibrant synthwave colored syntax highlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCRwdarntY5N02tB38T-qVbdpCNVdPqPGPaMS67W9BkiRyvAwKgpoYBNJvc2l8t7vN6TSdHTJzjzvQO07e7-yLBmakQkHj3L3Lt7wrcNDCpn1dwOqoBwdwd3AVKfC4V_NtZNB9JnoeseY2u93wqN_TlmPMc_N6qc_8YBGuwknkJAd7oXAtbTRJYU5oEbUE04-0IPKtMSWbNLGL1g9FH4hU4xxD-BtHmkkPzcPrBkhVb1bkDg0YDnK17M1LyX-4sCU00IyJrRb8gGmw"/>
+<span class="text-[10px] font-mono text-on-secondary-container mb-2 block tracking-widest uppercase font-bold">TECH_TIPS // 01</span>
+<h4 class="font-headline font-bold uppercase leading-tight mb-4 text-lg">Optimizing Unity Draw Calls for VR</h4>
+<button class="flex items-center gap-2 font-label text-xs font-bold text-primary-fixed hover:text-white">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+                            OPEN CHEST
                         </button>
-                    </div>
-                </div>
-                <!-- Project Card 2 -->
-                <div class="group glass-panel shadow-[4px_4px_0_0_#353535] hover:shadow-[12px_12px_0_0_#eaea00] transition-all overflow-hidden border-2 border-secondary-fixed/30">
-                    <div class="relative aspect-video">
-                        <img alt="Voxel World" class="w-full h-full object-cover"
-                             data-alt="Vibrant voxel-based fantasy world with a small hero character standing on a cliff overlooking a blocky forest"
-                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvhaLCqIoGCmkybb25jJA97vMzwTO6K5Zxqfob4_zHoG6Q0L9LQqkso-b6IYBWw0iercaSVnB4D16R5gZXbi9CF_KPcDGBbciGuK_t-fsERIDFg3tjS8HirSZGGXo_Nv1_NNB-t0KEPU8NTLv5do9dpIpyWJTGV0i7Qu_iqxbURtxsK2ijPG25SVEPWkFyFLCX-4TQZkjg9duKfLVC1yRrbHbvpraKyT4SF_QFZYXXIPDQFUClW6PQXQAPMqTQAxjRzO-8C2EWlqAH"/>
-                        <div class="absolute top-4 right-4 bg-primary-fixed text-on-primary-fixed px-3 py-1 font-bold text-xs shadow-lg">
-                            STAGE 02
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-black font-headline uppercase mb-2">BLOCK_QUEST_VR</h3>
-                        <p class="text-sm opacity-80 mb-6">VR dungeon crawler featuring interactive physics-based combat
-                            and procedural loot generation.</p>
-                        <button class="w-full bg-primary-fixed text-on-primary-fixed font-black py-3 border-b-4 border-on-primary-container group-hover:bg-white transition-colors">
-                            PLAY PROJECT
+</article>
+<!-- Article 2 -->
+<article class="bg-surface-container-high/40 backdrop-blur-md p-4 border-t-4 border-on-secondary-container hover:bg-surface-container-high/80 transition-all border-x border-b border-white/5">
+<img alt="Shader Art" class="w-full aspect-square object-cover mb-4 contrast-125 grayscale hover:grayscale-0 transition-all" data-alt="Mathematical fractals and geometric patterns glowing in neon pink and yellow against a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAomeySE-ghcl-DutPeT04vA0gOdQJWQ74WbfKzPT5CWoUxZMd9fz1GWe6fYdqbs76Zp4juEOLbhmgovObg-cmv8k0n71PI4L9t8-vPcu15kHE_GdQ3BRhrUQbAv4D78VoGW0FdOaWWSL-z6ZeePGcImc6z7fq9LmxMuM_bzHtdZFnTqGGdTF-cEbBHUX_JgvdLHDHt4s7unWNk3LGYP-MEwsyCBTp5grqFhGCd4EmhR3wzIUYEHoJye3RRGfwmUxM3mrlkIb8wHSFM"/>
+<span class="text-[10px] font-mono text-on-secondary-container mb-2 block tracking-widest uppercase font-bold">SHADERS // 04</span>
+<h4 class="font-headline font-bold uppercase leading-tight mb-4 text-lg">Mastering URP Surface Shaders</h4>
+<button class="flex items-center gap-2 font-label text-xs font-bold text-primary-fixed hover:text-white">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+                            OPEN CHEST
                         </button>
-                    </div>
-                </div>
-                <!-- Project Card 3 -->
-                <div class="group glass-panel shadow-[4px_4px_0_0_#353535] hover:shadow-[12px_12px_0_0_#eaea00] transition-all overflow-hidden border-2 border-secondary-fixed/30">
-                    <div class="relative aspect-video">
-                        <img alt="Sci-Fi Console" class="w-full h-full object-cover"
-                             data-alt="Close up of a sci-fi computer interface with scrolling green code and circular data visualizations"
-                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAnRtPTtgkU0TCv5ziNc5p1-Q-OBj-iox6B6AzdMypGNCidXt7LV1M6lJD0h6yqsP0DSZFV65L4zyMrRvMqF4iioaQocX-qoo4aigl3SMUONyMdqScC37o_H0cWdZDE5K7zv_3eeAVLzqIEE-s64SdYA91DjBYYlkEKiERouK221wXAxgvvIUuU-mJW-JBRTO46_xGiPilo5pn22TdemayztvxIIyfG92IFtijHrYSvopwEJ1oQbQBOm4sq3wt0p9XviGXRGaHxzjj"/>
-                        <div class="absolute top-4 right-4 bg-primary-fixed text-on-primary-fixed px-3 py-1 font-bold text-xs shadow-lg">
-                            STAGE 03
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-black font-headline uppercase mb-2">VOID_COMMANDER</h3>
-                        <p class="text-sm opacity-80 mb-6">Real-time strategy engine supporting 10,000+ units using
-                            Unity DOTS and ECS architecture.</p>
-                        <button class="w-full bg-primary-fixed text-on-primary-fixed font-black py-3 border-b-4 border-on-primary-container group-hover:bg-white transition-colors">
-                            PLAY PROJECT
+</article>
+<!-- Article 3 -->
+<article class="bg-surface-container-high/40 backdrop-blur-md p-4 border-t-4 border-on-secondary-container hover:bg-surface-container-high/80 transition-all border-x border-b border-white/5">
+<img alt="Game Console" class="w-full aspect-square object-cover mb-4 contrast-125 grayscale hover:grayscale-0 transition-all" data-alt="A vintage 80s television screen showing static and a distorted 'Game Over' message in red pixels" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1MdQM-ajwSSVJLguffTMdD18VdsvhFu1arxzNLllSl9VbXbPcFeGJ6pMDIC5rsVnrszlJg8o13kfLR0rB0mNYhWvOye-uGh_JWmhbez4r85MiSzQJ6gxdwDzn1XrL5i_60Cmyk9emyTUX2mgj9Z-1dUN7sIcDuo1F_fIa0Qm7FCnnj_RV62hre_33Tgu6SES9RiZBGcDwcJjFYnEPVTbAToD5Po9skxQdfkWPAQqIRHEDkprHaUeQVAEZ0Hsw87JJ3XvVKXoeWNl2"/>
+<span class="text-[10px] font-mono text-on-secondary-container mb-2 block tracking-widest uppercase font-bold">DESIGN // 12</span>
+<h4 class="font-headline font-bold uppercase leading-tight mb-4 text-lg">The Psychology of Arcade Difficulty</h4>
+<button class="flex items-center gap-2 font-label text-xs font-bold text-primary-fixed hover:text-white">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+                            OPEN CHEST
                         </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Section 4: Experience -->
-    <section class="experience-stage relative" id="experience">
-        <div class="experience-pin glass-panel">
-            <h2 class="text-4xl font-black font-headline uppercase tracking-tighter mb-20 text-center text-[#eaea00]">
-                MISSION HISTORY</h2>
-
-            <div class="relative timeline-track" id="timeline-container">
-                <!-- Vertical Path -->
-                <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-2 bg-surface-container-highest/50 border-x-2 border-surface-bright/50"></div>
-
-                <!-- Scroll Synced Dot -->
-                <div class="absolute left-1/2 -translate-x-1/2 w-8 h-8 bg-primary-fixed rounded-full z-20 top-0 border-4 border-black"
-                     id="scroll-dot"></div>
-
-                <!-- Timeline Events -->
-                <div class="timeline-events relative z-10">
-                    <!-- Item 1 -->
-                    <div class="timeline-item flex flex-col md:flex-row items-center gap-8">
-                        <div class="flex-1 md:text-right">
-                            <h3 class="timeline-title text-2xl font-black font-headline uppercase text-primary-fixed drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">
-                                Lead Game Dev</h3>
-                            <p class="text-secondary-fixed font-bold">NEBULAS STUDIOS // 2022 - PRESENT</p>
-                            <p class="mt-2 text-sm opacity-80">Leading a team of 12 for an unannounced AA title.
-                                Architected the core combat system.</p>
-                        </div>
-                        <div class="w-12 h-12 bg-primary-fixed border-4 border-black flex items-center justify-center shadow-[0_0_15px_#eaea00]">
-                            <span class="material-symbols-outlined text-black font-bold"></span>
-                        </div>
-                        <div class="flex-1 hidden md:block"></div>
-                    </div>
-
-                    <!-- Item 2 -->
-                    <div class="timeline-item flex flex-col md:flex-row items-center gap-8">
-                        <div class="flex-1 hidden md:block"></div>
-                        <div class="w-12 h-12 bg-secondary-fixed border-4 border-black flex items-center justify-center shadow-[0_0_15px_#00fbfb]">
-                            <span class="material-symbols-outlined text-black font-bold"></span>
-                        </div>
-                        <div class="flex-1 text-left">
-                            <h3 class="timeline-title text-2xl font-black font-headline uppercase text-primary-fixed drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">
-                                Senior Level Designer</h3>
-                            <p class="text-secondary-fixed font-bold">ARCADE REVOLUTION // 2019 - 2022</p>
-                            <p class="mt-2 text-sm opacity-80">Designed 15+ levels for 'VaporCity'. Optimized
-                                performance for mobile VR platforms.</p>
-                        </div>
-                    </div>
-
-                    <!-- Item 3 -->
-                    <div class="timeline-item flex flex-col md:flex-row items-center gap-8">
-                        <div class="flex-1 md:text-right">
-                            <h3 class="timeline-title text-2xl font-black font-headline uppercase text-primary-fixed drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">
-                                Junior Developer</h3>
-                            <p class="text-secondary-fixed font-bold">PIXEL LABS // 2017 - 2019</p>
-                            <p class="mt-2 text-sm opacity-80">Implemented gameplay mechanics and UI systems for various
-                                indie mobile games.</p>
-                        </div>
-                        <div class="w-12 h-12 bg-tertiary-fixed-dim border-4 border-black flex items-center justify-center shadow-[0_0_15px_#ffb4a8]">
-                            <span class="material-symbols-outlined text-black font-bold"></span>
-                        </div>
-                        <div class="flex-1 hidden md:block"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Section 5: Blogs -->
-    <section class="py-24 px-6 relative" id="lore">
-        <div class="max-w-7xl mx-auto glass-panel p-12 border-secondary-fixed/30">
-            <div class="flex items-center gap-4 mb-16">
-                <span class="material-symbols-outlined text-4xl text-tertiary-fixed-dim">auto_stories</span>
-                <h2 class="text-4xl font-black font-headline uppercase tracking-tighter">SIDE QUESTS</h2>
-                <div class="flex-grow h-1 bg-surface-container-highest/50"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Article 1 -->
-                <article
-                        class="bg-surface-container-high/40 backdrop-blur-md p-4 border-t-4 border-on-secondary-container hover:bg-surface-container-high/80 transition-all border-x border-b border-white/5">
-                    <img alt="Code Close up"
-                         class="w-full aspect-square object-cover mb-4 contrast-125 grayscale hover:grayscale-0 transition-all"
-                         data-alt="Blurred close up of complex computer code on a monitor with vibrant synthwave colored syntax highlighting"
-                         src="images/gravity-sketch-thumbnail.webp"/>
-                    <span class="text-[10px] font-mono text-on-secondary-container mb-2 block tracking-widest uppercase font-bold">UX Analysis // 01</span>
-                    <h4 class="font-headline font-bold uppercase leading-tight mb-4 text-lg">Gravity Sketch</h4>
-                    <button class="flex items-center gap-2 font-label text-xs font-bold text-primary-fixed hover:text-white"
-                            onclick="window.location.href='https://autovrse.notion.site/Gravity-Sketch-99130652d9d647d09f798004a9b3cd05'">
-                        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
-                        OPEN LOG
-                    </button>
-                </article>
-                <!-- Article 2 -->
-                <article
-                        class="bg-surface-container-high/40 backdrop-blur-md p-4 border-t-4 border-on-secondary-container hover:bg-surface-container-high/80 transition-all border-x border-b border-white/5">
-                    <img alt="Shader Art"
-                         class="w-full aspect-square object-cover mb-4 contrast-125 grayscale hover:grayscale-0 transition-all"
-                         data-alt="Mathematical fractals and geometric patterns glowing in neon pink and yellow against a dark background"
-                         src="images/shapesxr-thumbnail.webp"/>
-                    <span class="text-[10px] font-mono text-on-secondary-container mb-2 block tracking-widest uppercase font-bold">UX Analysis // 02</span>
-                    <h4 class="font-headline font-bold uppercase leading-tight mb-4 text-lg">Shapes-XR</h4>
-                    <button class="flex items-center gap-2 font-label text-xs font-bold text-primary-fixed hover:text-white"
-                            onclick="window.location.href='https://autovrse.notion.site/Shapes-XR-790d4af115ec4b3ab8352ddfc3ef833b'">
-                        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
-                        OPEN LOG
-                    </button>
-                </article>
-                <!-- Article 3 -->
-                <article
-                        class="bg-surface-container-high/40 backdrop-blur-md p-4 border-t-4 border-on-secondary-container hover:bg-surface-container-high/80 transition-all border-x border-b border-white/5">
-                    <img alt="Game Console"
-                         class="w-full aspect-square object-cover mb-4 contrast-125 grayscale hover:grayscale-0 transition-all"
-                         data-alt="A vintage 80s television screen showing static and a distorted 'Game Over' message in red pixels"
-                         src="images/campfire-thumbnail.webp"/>
-                    <span class="text-[10px] font-mono text-on-secondary-container mb-2 block tracking-widest uppercase font-bold">UX Analysis // 03</span>
-                    <h4 class="font-headline font-bold uppercase leading-tight mb-4 text-lg">Campfire</h4>
-                    <button class="flex items-center gap-2 font-label text-xs font-bold text-primary-fixed hover:text-white"
-                            onclick="window.location.href='https://autovrse.notion.site/Campfire-79e7cf0d8f154797a2357293d022d633'">
-                        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
-                        OPEN LOG
-                    </button>
-                </article>
-            </div>
-        </div>
-    </section>
-    <!-- Section 6: Contact Information -->
-    <section class="py-24 px-6 relative overflow-hidden" id="contact">
-        <div class="max-w-2xl mx-auto relative z-10">
-            <div class="glass-panel p-10 border-8 border-secondary-fixed shadow-[16px_16px_0_0_rgba(0,251,251,0.1)]">
-                <h2 class="text-4xl font-black font-headline uppercase tracking-tighter mb-2 text-center text-secondary-fixed drop-shadow-[0_0_10px_#00fbfb]">
-                    SUBMIT HIGH SCORE</h2>
-                <p class="text-center font-label text-xs tracking-widest opacity-70 mb-10">ENTER YOUR DETAILS TO
-                    COMMENCE CO-OP MISSION</p>
-                <form class="space-y-6">
-                    <div>
-                        <label class="block font-label uppercase font-bold text-sm mb-2 text-primary-fixed">PLAYER_NAME</label>
-                        <input class="w-full bg-surface-container-high/50 border-4 border-surface-bright p-4 font-mono focus:border-secondary-fixed outline-none transition-all placeholder:opacity-30 backdrop-blur"
-                               placeholder="ENTER NAME..." type="text"/>
-                    </div>
-                    <div>
-                        <label class="block font-label uppercase font-bold text-sm mb-2 text-primary-fixed">COMMS_CHANNEL</label>
-                        <input class="w-full bg-surface-container-high/50 border-4 border-surface-bright p-4 font-mono focus:border-secondary-fixed outline-none transition-all placeholder:opacity-30 backdrop-blur"
-                               placeholder="EMAIL_ADDRESS..." type="email"/>
-                    </div>
-                    <div>
-                        <label class="block font-label uppercase font-bold text-sm mb-2 text-primary-fixed">MISSION_BRIEF</label>
-                        <textarea
-                                class="w-full bg-surface-container-high/50 border-4 border-surface-bright p-4 font-mono focus:border-secondary-fixed outline-none transition-all placeholder:opacity-30 backdrop-blur"
-                                placeholder="DESCRIBE THE PROJECT..." rows="4"></textarea>
-                    </div>
-                    <button class="w-full bg-primary-fixed text-on-primary-fixed text-2xl py-6 font-black font-headline tracking-[0.2em] border-b-8 border-on-primary-container hover:bg-white active:translate-y-2 active:border-b-0 transition-all shadow-[0_0_20px_rgba(234,234,0,0.3)]"
-                            type="submit">
-                        INSERT COIN
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
+</article>
+<!-- Article 4 -->
+<article class="bg-surface-container-high/40 backdrop-blur-md p-4 border-t-4 border-on-secondary-container hover:bg-surface-container-high/80 transition-all border-x border-b border-white/5">
+<img alt="Arcade Interior" class="w-full aspect-square object-cover mb-4 contrast-125 grayscale hover:grayscale-0 transition-all" data-alt="Interior of a dimly lit neon arcade with rows of glowing cabinets reflecting on a polished black floor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8Of1zxqILOmwEmkfOVpznloTAAYTRIT1u-6vMdiP4msD-TMf-vjEwcmtlhtH_P2fmh5p5c8AdLvpPx6HxHbRyW7tt-w_sEkQk3Jsf4Amej5XD0qWjehOLroezH7hIlVzChwHb8JwTgrpuShEmDoB8p1m-DeTbFyWG4xyrLJSxM5X-j8bprGzwIeY8f_BmSba3dqdn-6YxCmLea0Q78pemeNDeAL_lIJGOHJCdsVbMVjVaV_Nst5za5-Qh5ODUCB20vwhx80HWkYhm"/>
+<span class="text-[10px] font-mono text-on-secondary-container mb-2 block tracking-widest uppercase font-bold">HISTORY // 02</span>
+<h4 class="font-headline font-bold uppercase leading-tight mb-4 text-lg">Evolution of the Unity Editor</h4>
+<button class="flex items-center gap-2 font-label text-xs font-bold text-primary-fixed hover:text-white">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+                            OPEN CHEST
+                        </button>
+</article>
+</div>
+</div>
+</section>
+<!-- Section 6: Contact Information -->
+<section class="py-24 px-6 relative overflow-hidden" id="contact">
+<div class="max-w-2xl mx-auto relative z-10">
+<div class="glass-panel p-10 border-8 border-secondary-fixed shadow-[16px_16px_0_0_rgba(0,251,251,0.1)]">
+<h2 class="text-4xl font-black font-headline uppercase tracking-tighter mb-2 text-center text-secondary-fixed drop-shadow-[0_0_10px_#00fbfb]">SUBMIT HIGH SCORE</h2>
+<p class="text-center font-label text-xs tracking-widest opacity-70 mb-10">ENTER YOUR DETAILS TO COMMENCE CO-OP MISSION</p>
+<form class="space-y-6">
+<div>
+<label class="block font-label uppercase font-bold text-sm mb-2 text-primary-fixed">PLAYER_NAME</label>
+<input class="w-full bg-surface-container-high/50 border-4 border-surface-bright p-4 font-mono focus:border-secondary-fixed outline-none transition-all placeholder:opacity-30 backdrop-blur" placeholder="ENTER NAME..." type="text"/>
+</div>
+<div>
+<label class="block font-label uppercase font-bold text-sm mb-2 text-primary-fixed">COMMS_CHANNEL</label>
+<input class="w-full bg-surface-container-high/50 border-4 border-surface-bright p-4 font-mono focus:border-secondary-fixed outline-none transition-all placeholder:opacity-30 backdrop-blur" placeholder="EMAIL_ADDRESS..." type="email"/>
+</div>
+<div>
+<label class="block font-label uppercase font-bold text-sm mb-2 text-primary-fixed">MISSION_BRIEF</label>
+<textarea class="w-full bg-surface-container-high/50 border-4 border-surface-bright p-4 font-mono focus:border-secondary-fixed outline-none transition-all placeholder:opacity-30 backdrop-blur" placeholder="DESCRIBE THE PROJECT..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary-fixed text-on-primary-fixed text-2xl py-6 font-black font-headline tracking-[0.2em] border-b-8 border-on-primary-container hover:bg-white active:translate-y-2 active:border-b-0 transition-all shadow-[0_0_20px_rgba(234,234,0,0.3)]" type="submit">
+                            INSERT COIN
+                        </button>
+</form>
+</div>
+</div>
+</section>
 </main>
 
 <footer class="w-full py-12 px-8 flex flex-col items-center gap-6 bg-background border-t-8 border-[#cc0100]">
     <div class="text-[#cc0100] font-bold text-xl font-headline tracking-widest uppercase">PLAYER_1</div>
     <div class="flex gap-8">
-        <a class="font-inter text-xs uppercase tracking-widest text-[#e2e2e2] opacity-70 hover:text-[#eaea00] hover:skew-x-2 transition-transform"
-           href="#">TWITCH</a>
-        <a class="font-inter text-xs uppercase tracking-widest text-[#e2e2e2] opacity-70 hover:text-[#eaea00] hover:skew-x-2 transition-transform"
-           href="#">GITHUB</a>
-        <a class="font-inter text-xs uppercase tracking-widest text-[#e2e2e2] opacity-70 hover:text-[#eaea00] hover:skew-x-2 transition-transform"
-           href="#">DISCORD</a>
+        <a class="font-inter text-xs uppercase tracking-widest text-[#e2e2e2] opacity-70 hover:text-[#eaea00] hover:skew-x-2 transition-transform" href="#">TWITCH</a>
+        <a class="font-inter text-xs uppercase tracking-widest text-[#e2e2e2] opacity-70 hover:text-[#eaea00] hover:skew-x-2 transition-transform" href="#">GITHUB</a>
+        <a class="font-inter text-xs uppercase tracking-widest text-[#e2e2e2] opacity-70 hover:text-[#eaea00] hover:skew-x-2 transition-transform" href="#">DISCORD</a>
     </div>
     <div class="font-inter text-xs uppercase tracking-widest text-[#ffb4a8] opacity-80">
-        2026 GAME_OVER_MAN // NO RIGHTS RESERVED
+        © 2024 GAME_OVER_MAN // ALL RIGHTS RESERVED
     </div>
 </footer>
+
+<script src="script.js"></script>
 </body>
 </html>
