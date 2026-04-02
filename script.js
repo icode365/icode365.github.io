@@ -13,8 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const animateBars = () => {
             bars.forEach((bar) => {
                 const target = bar.dataset.level || '0';
-                bar.style.transition = 'width 1.2s ease-out';
+
+                bar.style.transition = 'none';
+                bar.style.width = '0';
+
                 requestAnimationFrame(() => {
+                    bar.style.transition = 'width 1.2s cubic-bezier(0.1, 0.7, 0.1, 1)';
                     bar.style.width = `${target}%`;
                 });
             });
@@ -41,15 +45,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const dot = document.getElementById('scroll-dot');
     const timelineItems = Array.from(document.querySelectorAll('.timeline-item'));
 
-    if (!experienceSection || !timelineContainer || !dot || timelineItems.length < 3) return;
+    if (experienceSection && timelineContainer && dot && timelineItems.length >= 3) {
+        let itemCenters = [];
 
-    let itemCenters = [];
+        const measureItemCenters = () => {
+            const trackRect = timelineContainer.getBoundingClientRect();
+            const trackHeight = timelineContainer.offsetHeight;
 
-    const measureItemCenters = () => {
-        const trackRect = timelineContainer.getBoundingClientRect();
-        const trackHeight = timelineContainer.offsetHeight;
-
-        itemCenters = timelineItems.map((item) => {
+            itemCenters = timelineItems.map((item) => {
             const itemRect = item.getBoundingClientRect();
             const itemCenter = itemRect.top + itemRect.height / 2 - trackRect.top;
             const dotMax = Math.max(0, trackHeight - dot.offsetHeight);
@@ -97,4 +100,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', updateTimeline, { passive: true });
     window.addEventListener('resize', updateTimeline);
+    }
+
+    const demoVideo = document.querySelector('.demo-video');
+    const demoThumbnail = document.querySelector('.demo-thumbnail');
+    const demoCard = demoVideo?.closest('.group');
+
+    if (demoVideo && demoThumbnail && demoCard) {
+        const showThumbnail = () => {
+            demoVideo.pause();
+            demoVideo.currentTime = 0;
+            demoVideo.classList.add('opacity-0');
+            demoThumbnail.classList.remove('opacity-0');
+            demoThumbnail.classList.add('opacity-100');
+        };
+
+        const showVideo = () => {
+            demoThumbnail.classList.remove('opacity-100');
+            demoThumbnail.classList.add('opacity-0');
+            demoVideo.classList.remove('opacity-0');
+            demoVideo.classList.add('opacity-100');
+            demoVideo.play().catch(() => {});
+        };
+
+        demoCard.addEventListener('mouseenter', showVideo);
+        demoCard.addEventListener('mouseleave', showThumbnail);
+        showThumbnail();
+    }
 });

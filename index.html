@@ -153,10 +153,10 @@
                                 <span class="material-symbols-outlined text-secondary-fixed">category</span>
                                 <span class="font-label uppercase font-bold text-lg">Unity Engine</span>
                             </div>
-                            <span class="text-secondary-fixed font-mono">LVL 95</span>
+                            <span class="text-secondary-fixed font-mono">LVL 75</span>
                         </div>
                         <div class="h-8 bg-surface-container-highest/50 flex p-1 border-2 border-surface-bright backdrop-blur">
-                            <div class="skill-bar h-full bg-secondary-fixed" data-level="95"
+                            <div class="skill-bar h-full bg-secondary-fixed" data-level="75"
                                  style="width: 0; box-shadow: 0 0 10px #00fbfb;"></div>
                             <div class="h-full w-[5%] bg-transparent"></div>
                         </div>
@@ -168,10 +168,10 @@
                                 <span class="material-symbols-outlined text-secondary-fixed">terminal</span>
                                 <span class="font-label uppercase font-bold text-lg">C# Scripting</span>
                             </div>
-                            <span class="text-secondary-fixed font-mono">LVL 88</span>
+                            <span class="text-secondary-fixed font-mono">LVL 65</span>
                         </div>
                         <div class="h-8 bg-surface-container-highest/50 flex p-1 border-2 border-surface-bright backdrop-blur">
-                            <div class="skill-bar h-full bg-secondary-fixed" data-level="88"
+                            <div class="skill-bar h-full bg-secondary-fixed" data-level="60"
                                  style="width: 0; box-shadow: 0 0 10px #00fbfb;"></div>
                             <div class="h-full w-[12%] bg-transparent"></div>
                         </div>
@@ -180,13 +180,13 @@
                     <div>
                         <div class="flex justify-between items-end mb-2">
                             <div class="flex items-center gap-3">
-                                <span class="material-symbols-outlined text-secondary-fixed">3d_rotation</span>
-                                <span class="font-label uppercase font-bold text-lg">Blender 3D</span>
+                                <span class="material-symbols-outlined text-secondary-fixed">auto_awesome</span>
+                                <span class="font-label uppercase font-bold text-lg">AI Workflow</span>
                             </div>
-                            <span class="text-tertiary-fixed-dim font-mono">LVL 72</span>
+                            <span class="text-tertiary-fixed-dim font-mono">LVL 50</span>
                         </div>
                         <div class="h-8 bg-surface-container-highest/50 flex p-1 border-2 border-surface-bright backdrop-blur">
-                            <div class="skill-bar h-full bg-tertiary-fixed-dim" data-level="72"
+                            <div class="skill-bar h-full bg-tertiary-fixed-dim" data-level="50"
                                  style="width: 0; box-shadow: 0 0 10px #ffb4a8;"></div>
                             <div class="h-full w-[28%] bg-transparent"></div>
                         </div>
@@ -227,24 +227,30 @@
         <div class="max-w-7xl mx-auto">
             <div class="flex justify-between items-end mb-16">
                 <h2 class="text-4xl font-black font-headline uppercase tracking-tighter border-l-8 border-secondary-fixed pl-6">
-                    LEVEL SELECTION</h2>
+                    HIGHLIGHTS</h2>
                 <span class="font-mono text-secondary-fixed hidden md:block">SELECT_STAGE_01-06</span>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project Card 1 -->
                 <div class="group glass-panel shadow-[4px_4px_0_0_#353535] hover:shadow-[12px_12px_0_0_#eaea00] transition-all overflow-hidden border-2 border-secondary-fixed/30">
                     <div class="relative aspect-video">
-                        <img alt="Cyberpunk Game Scene" class="w-full h-full object-cover"
-                             data-alt="High-contrast game engine screenshot of a rainy cyberpunk neon street with glowing puddles and futuristic architecture"
-                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5OLU-0xMH87LwGQwhhj7U13_kFsetvpIVl62tgVkCxjjPqaIBDYPk6aop1FopCFz7lOLOgtjrKeUMLkYP5N7ex4FoDtZmkCF7E1OngNEE34hHcSvfmGctCzTHxnhvQuyV4qGk7pHieU3x09mdT3As5n5ObHMNtaH2KIOJFKoDZVIDpMMdX6JWlO8OHYZHvnBEVZdAdbKvI5aY5CmzHnkDP_RPzJ1gQHbQwQ_askRU9CaxIrMY0a0CbsxC5D6b3dSRzRGqz67EXrfy"/>
-                        <div class="absolute top-4 right-4 bg-primary-fixed text-on-primary-fixed px-3 py-1 font-bold text-xs shadow-lg">
-                            STAGE 01
-                        </div>
+                        <img
+                                class="demo-thumbnail absolute inset-0 w-full h-full object-cover transition-opacity duration-300 opacity-100"
+                                src="Videos/demo_thumbnail.png"
+                                alt="Demo video thumbnail"
+                        />
+                        <video
+                                class="demo-video w-full h-full object-cover"
+                                src="Videos/infinity_workshop_demo.mp4"
+                                muted
+                                playsinline
+                                preload="metadata"
+                        ></video>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-black font-headline uppercase mb-2">NEON_DRIFT_2099</h3>
-                        <p class="text-sm opacity-80 mb-6">A high-octane procedural racing engine built in Unity HDRP
-                            with custom physics controllers.</p>
+                        <h3 class="text-2xl font-black font-headline uppercase mb-2">Infinity Workshop</h3>
+                        <p class="text-sm opacity-80 mb-6">A custom asset handling solution for Unity projects. It's not
+                            just a custom editor, it's an entire pipeline.</p>
                         <button class="w-full bg-primary-fixed text-on-primary-fixed font-black py-3 border-b-4 border-on-primary-container group-hover:bg-white transition-colors">
                             PLAY PROJECT
                         </button>
@@ -451,11 +457,9 @@
     <div class="text-[#cc0100] font-bold text-xl font-headline tracking-widest uppercase">PLAYER_1</div>
     <div class="flex gap-8">
         <a class="font-inter text-xs uppercase tracking-widest text-[#e2e2e2] opacity-70 hover:text-[#eaea00] hover:skew-x-2 transition-transform"
-           href="#">TWITCH</a>
+           href="https://linkedin.com/in/ashutosh-bante-050015191">LINKEDIN</a>
         <a class="font-inter text-xs uppercase tracking-widest text-[#e2e2e2] opacity-70 hover:text-[#eaea00] hover:skew-x-2 transition-transform"
-           href="#">GITHUB</a>
-        <a class="font-inter text-xs uppercase tracking-widest text-[#e2e2e2] opacity-70 hover:text-[#eaea00] hover:skew-x-2 transition-transform"
-           href="#">DISCORD</a>
+           href="https://github.com/icode365">GITHUB</a>
     </div>
     <div class="font-inter text-xs uppercase tracking-widest text-[#ffb4a8] opacity-80">
         2026 GAME_OVER_MAN // NO RIGHTS RESERVED
