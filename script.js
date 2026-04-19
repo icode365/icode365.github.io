@@ -1,4 +1,33 @@
+import Lenis from 'https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/+esm';
+
 document.addEventListener('DOMContentLoaded', () => {
+    const lenis = new Lenis({
+        duration: 1.15,
+        easing: (t) => 1 - Math.pow(1 - t, 3),
+        smoothWheel: true,
+        smoothTouch: false,
+        wheelMultiplier: 1,
+    });
+
+    const raf = (time) => {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    };
+
+    requestAnimationFrame(raf);
+
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener('click', (event) => {
+            const href = link.getAttribute('href');
+            const target = href ? document.querySelector(href) : null;
+
+            if (!target) return;
+
+            event.preventDefault();
+            lenis.scrollTo(target);
+        });
+    });
+
     const statsSection = document.getElementById('stats');
     const bars = document.querySelectorAll('.skill-bar');
 
@@ -53,53 +82,52 @@ document.addEventListener('DOMContentLoaded', () => {
             const trackHeight = timelineContainer.offsetHeight;
 
             itemCenters = timelineItems.map((item) => {
-            const itemRect = item.getBoundingClientRect();
-            const itemCenter = itemRect.top + itemRect.height / 2 - trackRect.top;
-            const dotMax = Math.max(0, trackHeight - dot.offsetHeight);
+                const itemRect = item.getBoundingClientRect();
+                const itemCenter = itemRect.top + itemRect.height / 2 - trackRect.top;
+                const dotMax = Math.max(0, trackHeight - dot.offsetHeight);
 
-            return Math.max(0, Math.min(dotMax, itemCenter - dot.offsetHeight / 2));
-        });
-    };
+                return Math.max(0, Math.min(dotMax, itemCenter - dot.offsetHeight / 2));
+            });
+        };
 
-    const setActiveItem = (index) => {
-        const activeIndex = Math.max(0, Math.min(timelineItems.length - 1, index));
+        const setActiveItem = (index) => {
+            const activeIndex = Math.max(0, Math.min(timelineItems.length - 1, index));
 
-        timelineItems.forEach((item, i) => {
-            item.classList.toggle('is-active', i === activeIndex);
-        });
+            timelineItems.forEach((item, i) => {
+                item.classList.toggle('is-active', i === activeIndex);
+            });
 
-        if (itemCenters.length) {
-            dot.style.top = `${itemCenters[activeIndex]}px`;
-        }
-    };
+            if (itemCenters.length) {
+                dot.style.top = `${itemCenters[activeIndex]}px`;
+            }
+        };
 
-    const updateTimeline = () => {
-        const rect = experienceSection.getBoundingClientRect();
-        const viewportHeight = window.innerHeight;
-        const sectionHeight = experienceSection.offsetHeight;
+        const updateTimeline = () => {
+            const rect = experienceSection.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            const sectionHeight = experienceSection.offsetHeight;
 
-        const totalRange = viewportHeight + sectionHeight;
-        const scrolled = viewportHeight - rect.top;
-        const progress = Math.max(0, Math.min(1, scrolled / totalRange));
+            const totalRange = viewportHeight + sectionHeight;
+            const scrolled = viewportHeight - rect.top;
+            const progress = Math.max(0, Math.min(1, scrolled / totalRange));
 
-        // Use 3 zones, but align the dot to the real item centers
-        let activeIndex = 0;
-        if (progress >= 0.34 && progress < 0.67) {
-            activeIndex = 1;
-        } else if (progress >= 0.67) {
-            activeIndex = 2;
-        }
+            let activeIndex = 0;
+            if (progress >= 0.34 && progress < 0.67) {
+                activeIndex = 1;
+            } else if (progress >= 0.67) {
+                activeIndex = 2;
+            }
+
+            measureItemCenters();
+            setActiveItem(activeIndex);
+        };
 
         measureItemCenters();
-        setActiveItem(activeIndex);
-    };
+        setActiveItem(0);
+        updateTimeline();
 
-    measureItemCenters();
-    setActiveItem(0);
-    updateTimeline();
-
-    window.addEventListener('scroll', updateTimeline, { passive: true });
-    window.addEventListener('resize', updateTimeline);
+        window.addEventListener('scroll', updateTimeline, { passive: true });
+        window.addEventListener('resize', updateTimeline);
     }
 
     const demoVideo = document.querySelector('.demo-video');
@@ -128,3 +156,26 @@ document.addEventListener('DOMContentLoaded', () => {
         showThumbnail();
     }
 });
+
+const fullscreenButton = document.getElementById('fullscreen-toggle');
+
+if (fullscreenButton) {
+    const updateFullscreenLabel = () => {
+        fullscreenButton.textContent = document.fullscreenElement ? 'EXIT FULL' : 'FULL SCREEN';
+    };
+
+    fullscreenButton.addEventListener('click', async () => {
+        try {
+            if (!document.fullscreenElement) {
+                await document.documentElement.requestFullscreen();
+            } else {
+                await document.exitFullscreen();
+            }
+            updateFullscreenLabel();
+        } catch (error) {
+            console.error('Fullscreen toggle failed:', error);
+        }
+    });
+
+    document.addEventListener('fullscreenchange', updateFullscreenLabel);
+}

@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>PLAYER_1 // UNITY DEVELOPER PORTFOLIO</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
           rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
@@ -97,12 +97,11 @@
            href="#contact">MISSION</a>
     </div>
     <div class="flex items-center gap-4">
-        <button class="bg-primary-fixed text-on-primary-fixed px-6 py-2 font-black font-space-grotesk tracking-widest border-b-4 border-on-primary-container active:translate-y-1 transition-all shadow-[0_0_15px_rgba(234,234,0,0.3)]">
-            INSERT COIN
-        </button>
         <div class="flex gap-2">
-            <span class="material-symbols-outlined text-[#eaea00] cursor-pointer hover:bg-surface-container-high p-2">videogame_asset</span>
-            <span class="material-symbols-outlined text-[#eaea00] cursor-pointer hover:bg-surface-container-high p-2">settings</span>
+            <button id="fullscreen-toggle"
+                    class="bg-primary-fixed text-on-primary-fixed px-6 py-2 font-black font-space-grotesk tracking-widest border-b-4 border-on-primary-container active:translate-y-1 transition-all shadow-[0_0_15px_rgba(234,234,0,0.3)]">
+                FULL SCREEN
+            </button>
         </div>
     </div>
 </nav>
@@ -140,8 +139,8 @@
         </div>
     </section>
     <!-- Section 2: Qualifications -->
-    <section class="py-24 px-6 relative" id="stats">
-        <div class="max-w-6xl mx-auto">
+    <section class="py-24 px-6 relative sticky-stage" id="stats">
+        <div class="sticky-stage-pin">
             <h2 class="text-4xl font-black font-headline uppercase tracking-tighter mb-16 border-l-8 border-primary-fixed pl-6">
                 CHARACTER STATS</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -223,13 +222,14 @@
         </div>
     </section>
     <!-- Section 3: Projects -->
-    <section class="py-24 px-6 pixel-grid" id="projects">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex justify-between items-end mb-16">
-                <h2 class="text-4xl font-black font-headline uppercase tracking-tighter border-l-8 border-secondary-fixed pl-6">
-                    HIGHLIGHTS</h2>
-                <span class="font-mono text-secondary-fixed hidden md:block">SELECT_STAGE_01-06</span>
-            </div>
+    <section class="py-24 px-6 pixel-grid sticky-stage" id="projects" style="--stage-height: 300vh;">
+        <div class="flex justify-between items-end mb-16">
+            <h2 class="text-4xl font-black font-headline uppercase tracking-tighter border-l-8 border-secondary-fixed pl-6">
+                HIGHLIGHTS</h2>
+            <span class="font-mono text-secondary-fixed hidden md:block">SELECT_STAGE_01-06</span>
+        </div>
+        <div class="sticky-stage-pin" style="--stage-pin-height: 100vh;">
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project Card 1 -->
                 <div class="group glass-panel shadow-[4px_4px_0_0_#353535] hover:shadow-[12px_12px_0_0_#eaea00] transition-all overflow-hidden border-2 border-secondary-fixed/30">
@@ -254,9 +254,9 @@
                         <h3 class="text-2xl font-black font-headline uppercase mb-2">Infinity Workshop</h3>
                         <p class="text-sm opacity-80 mb-6">A custom asset handling solution for Unity projects. It's not
                             just a custom editor, it's an entire pipeline.</p>
-<!--                        <button class="w-full bg-primary-fixed text-on-primary-fixed font-black py-3 border-b-4 border-on-primary-container group-hover:bg-white transition-colors">-->
-<!--                            PLAY PROJECT-->
-<!--                        </button>-->
+                        <!--                        <button class="w-full bg-primary-fixed text-on-primary-fixed font-black py-3 border-b-4 border-on-primary-container group-hover:bg-white transition-colors">-->
+                        <!--                            PLAY PROJECT-->
+                        <!--                        </button>-->
                     </div>
                 </div>
                 <!-- Project Card 2 -->
@@ -271,10 +271,11 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-black font-headline uppercase mb-2">LOCAL MULTIPLAYER</h3>
-                        <p class="text-sm opacity-80 mb-6">POC project implementing Meta's Shared Spatial Anchors and Passthrough feature.</p>
-<!--                        <button class="w-full bg-primary-fixed text-on-primary-fixed font-black py-3 border-b-4 border-on-primary-container group-hover:bg-white transition-colors">-->
-<!--                            PLAY PROJECT-->
-<!--                        </button>-->
+                        <p class="text-sm opacity-80 mb-6">POC project implementing Meta's Shared Spatial Anchors and
+                            Passthrough feature.</p>
+                        <!--                        <button class="w-full bg-primary-fixed text-on-primary-fixed font-black py-3 border-b-4 border-on-primary-container group-hover:bg-white transition-colors">-->
+                        <!--                            PLAY PROJECT-->
+                        <!--                        </button>-->
                     </div>
                 </div>
                 <!-- Project Card 3 -->
@@ -289,10 +290,11 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-black font-headline uppercase mb-2">CUSTOM VR GAMEPLAY</h3>
-                        <p class="text-sm opacity-80 mb-6">Implemented VR gameplay features based on requirements like step dials with customizable steps.</p>
-<!--                        <button class="w-full bg-primary-fixed text-on-primary-fixed font-black py-3 border-b-4 border-on-primary-container group-hover:bg-white transition-colors">-->
-<!--                            PLAY PROJECT-->
-<!--                        </button>-->
+                        <p class="text-sm opacity-80 mb-6">Implemented VR gameplay features based on requirements like
+                            step dials with customizable steps.</p>
+                        <!--                        <button class="w-full bg-primary-fixed text-on-primary-fixed font-black py-3 border-b-4 border-on-primary-container group-hover:bg-white transition-colors">-->
+                        <!--                            PLAY PROJECT-->
+                        <!--                        </button>-->
                     </div>
                 </div>
                 <!-- Project Card 4 -->
@@ -307,7 +309,8 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-black font-headline uppercase mb-2">AI-POWERED FEATURES</h3>
-                        <p class="text-sm opacity-80 mb-6">Implemented AI-BASED features like Gemini Speech to Text, Conversational Chat, etc.</p>
+                        <p class="text-sm opacity-80 mb-6">Implemented AI-BASED features like Gemini Speech to Text,
+                            Conversational Chat, etc.</p>
                     </div>
                 </div><!-- Project Card 5 -->
                 <div class="group glass-panel shadow-[4px_4px_0_0_#353535] hover:shadow-[12px_12px_0_0_#eaea00] transition-all overflow-hidden border-2 border-secondary-fixed/30">
@@ -321,7 +324,8 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-black font-headline uppercase mb-2">GENERIC XR FEATURES</h3>
-                        <p class="text-sm opacity-80 mb-6">VR Distance measurement system, Runtime scalable VR Tag system.</p>
+                        <p class="text-sm opacity-80 mb-6">VR Distance measurement system, Runtime scalable VR Tag
+                            system.</p>
                     </div>
                 </div>
             </div>
@@ -392,8 +396,8 @@
         </div>
     </section>
     <!-- Section 5: Blogs -->
-    <section class="py-24 px-6 relative" id="lore">
-        <div class="max-w-7xl mx-auto glass-panel p-12 border-secondary-fixed/30">
+    <section class="py-24 px-6 relative sticky-stage" id="lore">
+        <div class="max-w-7xl mx-auto glass-panel p-12 border-secondary-fixed/30 sticky-stage-pin">
             <div class="flex items-center gap-4 mb-16">
                 <span class="material-symbols-outlined text-4xl text-tertiary-fixed-dim">auto_stories</span>
                 <h2 class="text-4xl font-black font-headline uppercase tracking-tighter">SIDE QUESTS</h2>
