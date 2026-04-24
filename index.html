@@ -6,7 +6,7 @@
     <title>PLAYER_1 // UNITY DEVELOPER PORTFOLIO</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script type="module" src="script.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Press+Start+2P&display=swap"
           rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
           rel="stylesheet"/>
@@ -68,7 +68,8 @@
                     fontFamily: {
                         "headline": ["Space Grotesk"],
                         "body": ["Inter"],
-                        "label": ["Space Grotesk"]
+                        "label": ["Space Grotesk"],
+                        "retro": ["'Press Start 2P'", "cursive"]
                     },
                     borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "0px"},
                 },
@@ -282,6 +283,11 @@
                             <h3 class="text-xl font-black font-headline uppercase mb-1">Infinity Workshop</h3>
                             <p class="text-xs opacity-80 mb-4">A custom asset handling solution for Unity projects. It's not
                                 just a custom editor, it's an entire pipeline.</p>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">C# // EDITOR_API</span>
+                                <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">ASSET_PIPELINE</span>
+                                <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">UNITY_PACKAGE</span>
+                            </div>
                         </div>
                     </div>
                     <!-- Project Card 2 -->
@@ -298,6 +304,11 @@
                             <h3 class="text-xl font-black font-headline uppercase mb-1">LOCAL MULTIPLAYER</h3>
                             <p class="text-xs opacity-80 mb-4">POC project implementing Meta's Shared Spatial Anchors and
                                 Passthrough feature.</p>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">META_XR_SDK</span>
+                                <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">PASSTHROUGH</span>
+                                <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">MULTIPLAYER</span>
+                            </div>
                         </div>
                     </div>
                     <!-- Project Card 3 -->
@@ -314,6 +325,11 @@
                             <h3 class="text-xl font-black font-headline uppercase mb-1">CUSTOM VR GAMEPLAY</h3>
                             <p class="text-xs opacity-80 mb-4">Implemented VR gameplay features based on requirements like
                                 step dials with customizable steps.</p>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">VR_INTERACTIONS</span>
+                                <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">UNITY_PHYSICS</span>
+                                <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">HAPTIC_FEEDBACK</span>
+                            </div>
                         </div>
                     </div>
                     <!-- Project Card 4 -->
@@ -330,6 +346,11 @@
                             <h3 class="text-xl font-black font-headline uppercase mb-1">AI-POWERED FEATURES</h3>
                             <p class="text-xs opacity-80 mb-4">Implemented AI-BASED features like Gemini Speech to Text,
                                 Conversational Chat, etc.</p>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">GEMINI_API</span>
+                                <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">STT_TTS</span>
+                                <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">AI_NPC</span>
+                            </div>
                         </div>
                     </div><!-- Project Card 5 -->
                     <div class="project-card flex-none w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group glass-panel shadow-[4px_4px_0_0_#353535] hover:shadow-[12px_12px_0_0_#eaea00] transition-all overflow-hidden border-2 border-secondary-fixed/30">
@@ -345,6 +366,11 @@
                             <h3 class="text-xl font-black font-headline uppercase mb-1">GENERIC XR FEATURES</h3>
                             <p class="text-xs opacity-80 mb-4">VR Distance measurement system, Runtime scalable VR Tag
                                 system.</p>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">XR_UTILS</span>
+                                <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">RUNTIME_UI</span>
+                                <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">VR_CALIBRATION</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -353,58 +379,27 @@
     </section>
     <!-- Section 4: Experience -->
     <section class="experience-stage relative" id="experience">
-        <div class="experience-pin glass-panel p-6 md:p-12">
-            <h2 class="text-3xl md:text-4xl font-black font-headline uppercase tracking-tighter mb-12 md:mb-20 text-center text-[#eaea00]">
-                MISSION HISTORY</h2>
-            <div class="relative timeline-track" id="timeline-container">
-                <!-- Vertical Path -->
-                <div class="absolute left-4 md:left-1/2 -translate-x-1/2 top-0 bottom-0 w-2 bg-surface-container-highest/50 border-x-2 border-surface-bright/50"></div>
-                <!-- Scroll Synced Dot -->
-                <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 bg-primary-fixed rounded-full z-20 top-0 border-4 border-black"
-                     id="scroll-dot"></div>
-                <!-- Timeline Events -->
-                <div class="timeline-events relative z-10 pl-12 md:pl-0">
-                    <!-- Item 1 -->
-                    <div class="timeline-item flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 mb-12 md:mb-0">
-                        <div class="flex-1 md:text-right w-full">
-                            <h3 class="timeline-title text-xl md:text-2xl font-black font-headline uppercase text-primary-fixed drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">
-                                Lead Game Dev</h3>
-                            <p class="text-secondary-fixed font-bold text-sm md:text-base">NEBULAS STUDIOS // 2022 - PRESENT</p>
-                            <p class="mt-2 text-xs md:text-sm opacity-80">Leading a team of 12 for an unannounced AA title.
-                                Architected the core combat system.</p>
-                        </div>
-                        <div class="hidden md:flex w-12 h-12 bg-primary-fixed border-4 border-black items-center justify-center shadow-[0_0_15px_#eaea00] shrink-0">
-                            <span class="material-symbols-outlined text-black font-bold"></span>
-                        </div>
-                        <div class="flex-1 hidden md:block"></div>
-                    </div>
-                    <!-- Item 2 -->
-                    <div class="timeline-item flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 mb-12 md:mb-0">
-                        <div class="flex-1 hidden md:block"></div>
-                        <div class="hidden md:flex w-12 h-12 bg-secondary-fixed border-4 border-black items-center justify-center shadow-[0_0_15px_#00fbfb] shrink-0">
-                            <span class="material-symbols-outlined text-black font-bold"></span>
-                        </div>
-                        <div class="flex-1 text-left w-full">
-                            <h3 class="timeline-title text-xl md:text-2xl font-black font-headline uppercase text-primary-fixed drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">
-                                Senior Level Designer</h3>
-                            <p class="text-secondary-fixed font-bold text-sm md:text-base">ARCADE REVOLUTION // 2019 - 2022</p>
-                            <p class="mt-2 text-xs md:text-sm opacity-80">Designed 15+ levels for 'VaporCity'. Optimized
-                                performance for mobile VR platforms.</p>
-                        </div>
-                    </div>
-                    <!-- Item 3 -->
-                    <div class="timeline-item flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 mb-12 md:mb-0">
-                        <div class="flex-1 md:text-right w-full">
-                            <h3 class="timeline-title text-xl md:text-2xl font-black font-headline uppercase text-primary-fixed drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">
-                                Junior Developer</h3>
-                            <p class="text-secondary-fixed font-bold text-sm md:text-base">PIXEL LABS // 2017 - 2019</p>
-                            <p class="mt-2 text-xs md:text-sm opacity-80">Implemented gameplay mechanics and UI systems for various
-                                indie mobile games.</p>
-                        </div>
-                        <div class="hidden md:flex w-12 h-12 bg-tertiary-fixed-dim border-4 border-black items-center justify-center shadow-[0_0_15px_#ffb4a8] shrink-0">
-                            <span class="material-symbols-outlined text-black font-bold"></span>
-                        </div>
-                        <div class="flex-1 hidden md:block"></div>
+        <div class="experience-pin flex items-center justify-center">
+            <!-- Large Background Year -->
+            <div class="absolute inset-0 flex items-center justify-start pointer-events-none select-none opacity-80 px-4 md:px-12 overflow-hidden bg-black/20">
+                <div class="year-display font-retro text-[10vh] md:text-[25vh] flex justify-start items-start" id="experience-year-container">
+                    <!-- Dynamic odometer columns will be injected here -->
+                </div>
+            </div>
+
+            <div class="container mx-auto px-4 relative z-10 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+                <!-- Left: Just empty space to let the year be visible or for future use -->
+                <div class="hidden md:block"></div>
+
+                <!-- Right: Dynamic Role Content -->
+                <div class="role-content-container glass-panel p-8 md:p-12 min-h-[500px] flex flex-col justify-center">
+                    <div id="experience-content">
+                        <h2 class="text-secondary-fixed font-retro text-sm mb-4 tracking-tighter" id="exp-year-label">2019 - 2020</h2>
+                        <h3 class="text-3xl md:text-5xl font-black font-headline uppercase mb-2 text-white" id="exp-role">GAME DEVELOPER</h3>
+                        <p class="text-primary-fixed font-bold text-lg md:text-xl mb-6" id="exp-company">FREELANCER / ELEMENTRIX</p>
+                        <p class="text-on-background opacity-80 leading-relaxed md:text-lg" id="exp-desc">
+                            Built various game prototypes for mobile games. Focused on complete game loops with polished UX in Unity.
+                        </p>
                     </div>
                 </div>
             </div>

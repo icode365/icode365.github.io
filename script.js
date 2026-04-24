@@ -70,64 +70,123 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const experienceSection = document.getElementById('experience');
-    const timelineContainer = document.getElementById('timeline-container');
-    const dot = document.getElementById('scroll-dot');
-    const timelineItems = Array.from(document.querySelectorAll('.timeline-item'));
+    const yearContainer = document.getElementById('experience-year-container');
+    const expContent = document.getElementById('experience-content');
+    const expYearLabel = document.getElementById('exp-year-label');
+    const expRole = document.getElementById('exp-role');
+    const expCompany = document.getElementById('exp-company');
+    const expDesc = document.getElementById('exp-desc');
 
-    if (experienceSection && timelineContainer && dot && timelineItems.length >= 3) {
-        let itemCenters = [];
+    const experienceData = [
+        {
+            yearRange: "2019 - 2020",
+            years: [2019, 2020],
+            role: "GAME DEVELOPER",
+            company: "FREELANCER / ELEMENTRIX",
+            desc: "Built various game prototypes for mobile games. Focused on complete game loops with polished UX in Unity."
+        },
+        {
+            yearRange: "2021",
+            years: [2021],
+            role: "UNITY GAME DEVELOPER",
+            company: "One Learning",
+            desc: "Developed educational gamified puzzles for medical concepts."
+        },
+        {
+            yearRange: "2022 - 2025",
+            years: [2022, 2023, 2024, 2025],
+            role: "SENIOR UNITY DEVELOPER",
+            company: "AUTOVRSE",
+            desc: "Spearheading core XR systems development. Architected modular interaction frameworks and optimized rendering pipelines for standalone VR."
+        }
+    ];
 
-        const measureItemCenters = () => {
-            const trackRect = timelineContainer.getBoundingClientRect();
-            const trackHeight = timelineContainer.offsetHeight;
-
-            itemCenters = timelineItems.map((item) => {
-                const itemRect = item.getBoundingClientRect();
-                const itemCenter = itemRect.top + itemRect.height / 2 - trackRect.top;
-                const dotMax = Math.max(0, trackHeight - dot.offsetHeight);
-
-                return Math.max(0, Math.min(dotMax, itemCenter - dot.offsetHeight / 2));
+    if (experienceSection && yearContainer) {
+        // Initialize Year Odometer
+        const initYearOdometer = () => {
+            if (!yearContainer) return;
+            yearContainer.innerHTML = '';
+            // Use 0000 as base to ensure we have 4 columns
+            const startYear = "0000";
+            
+            console.log("Initializing Odometer Columns");
+            
+            startYear.split('').forEach((_, i) => {
+                const column = document.createElement('div');
+                column.className = 'year-digit-column';
+                column.dataset.index = i;
+                
+                // Add digits 0-9 to each column
+                for (let n = 0; n < 10; n++) {
+                    const item = document.createElement('div');
+                    item.className = 'year-digit-item';
+                    item.textContent = n;
+                    column.appendChild(item);
+                }
+                yearContainer.appendChild(column);
             });
         };
 
-        const setActiveItem = (index) => {
-            const activeIndex = Math.max(0, Math.min(timelineItems.length - 1, index));
+        let lastYear = null;
 
-            timelineItems.forEach((item, i) => {
-                item.classList.toggle('is-active', i === activeIndex);
-            });
-
-            if (itemCenters.length) {
-                dot.style.top = `${itemCenters[activeIndex]}px`;
-            }
-        };
-
-        const updateTimeline = () => {
+        const updateExperience = () => {
             const rect = experienceSection.getBoundingClientRect();
-            const viewportHeight = window.innerHeight;
             const sectionHeight = experienceSection.offsetHeight;
+            const viewportHeight = window.innerHeight;
+            
+            // Progress is 0 when section starts entering, 1 when it's fully scrolled
+            // But since it's sticky, we care about the scroll within the 500vh
+            const scrolled = -rect.top;
+            const scrollRange = sectionHeight - viewportHeight;
+            const progress = Math.max(0, Math.min(1, scrolled / scrollRange));
 
-            const totalRange = viewportHeight + sectionHeight;
-            const scrolled = viewportHeight - rect.top;
-            const progress = Math.max(0, Math.min(1, scrolled / totalRange));
+            // Map progress to year 2019 - 2025
+            const currentYear = Math.floor(2019 + progress * (2025 - 2019 + 0.99));
+            
+            if (currentYear !== lastYear) {
+                console.log(`Experience Year Update: ${currentYear}`);
+                // Update Odometer
+                const yearStr = currentYear.toString();
+                const columns = yearContainer.querySelectorAll('.year-digit-column');
+                // Ensure we have exactly 4 digits for years 2019-2025
+                const paddedYearStr = yearStr.padStart(4, '0');
+                
+                if (columns.length === 0) {
+                    console.warn("No odometer columns found, re-initializing.");
+                    initYearOdometer();
+                }
+                
+                paddedYearStr.split('').forEach((digit, i) => {
+                    const col = yearContainer.children[i];
+                    if (col) {
+                        const digitNum = parseInt(digit);
+                        col.style.transform = `translateY(-${digitNum * 10}%)`;
+                    }
+                });
+                console.log(`Odometer set to: ${paddedYearStr}`);
 
-            let activeIndex = 0;
-            if (progress >= 0.34 && progress < 0.67) {
-                activeIndex = 1;
-            } else if (progress >= 0.67) {
-                activeIndex = 2;
+                // Update Content
+                const data = experienceData.find(d => d.years.includes(currentYear));
+                if (data && expRole.textContent !== data.role) {
+                    // Trigger fade animation
+                    expContent.style.animation = 'none';
+                    expContent.offsetHeight; // trigger reflow
+                    expContent.style.animation = 'content-slide-up 0.5s ease-out';
+                    
+                    expYearLabel.textContent = data.yearRange;
+                    expRole.textContent = data.role;
+                    expCompany.textContent = data.company;
+                    expDesc.textContent = data.desc;
+                }
+                
+                lastYear = currentYear;
             }
-
-            measureItemCenters();
-            setActiveItem(activeIndex);
         };
 
-        measureItemCenters();
-        setActiveItem(0);
-        updateTimeline();
-
-        window.addEventListener('scroll', updateTimeline, { passive: true });
-        window.addEventListener('resize', updateTimeline);
+        initYearOdometer();
+        window.addEventListener('scroll', updateExperience, { passive: true });
+        window.addEventListener('resize', updateExperience);
+        updateExperience();
     }
 
     const demoVideo = document.querySelector('.demo-video');

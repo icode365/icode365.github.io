@@ -218,68 +218,119 @@ body {
 }
 
 
-/* Experience pinned full-screen stage */
+/* Icon Hover Animations */
+.glass-panel .material-symbols-outlined {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease, filter 0.3s ease;
+}
+
+.glass-panel:hover .material-symbols-outlined {
+    transform: scale(1.2) rotate(5deg);
+    filter: drop-shadow(0 0 8px currentColor);
+}
+
+.glass-panel:hover .material-symbols-outlined[style*="bolt"] {
+    animation: icon-jolt 0.5s infinite;
+}
+
+.glass-panel:hover .material-symbols-outlined[style*="psychology"] {
+    animation: icon-pulse 1s infinite;
+}
+
+.glass-panel:hover .material-symbols-outlined[style*="draw"] {
+    animation: icon-float 2s infinite ease-in-out;
+}
+
+.glass-panel:hover .material-symbols-outlined[style*="groups"] {
+    animation: icon-bounce 0.6s infinite;
+}
+
+@keyframes icon-jolt {
+    0%, 100% { transform: scale(1.2) translateY(0); }
+    50% { transform: scale(1.3) translateY(-4px) rotate(-10deg); }
+}
+
+@keyframes icon-pulse {
+    0% { transform: scale(1.2); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.7; }
+    100% { transform: scale(1.2); opacity: 1; }
+}
+
+@keyframes icon-float {
+    0%, 100% { transform: scale(1.2) translateY(0); }
+    50% { transform: scale(1.2) translateY(-8px); }
+}
+
+@keyframes icon-bounce {
+    0%, 100% { transform: scale(1.2) translateY(0); }
+    50% { transform: scale(1.2) translateY(-5px); }
+}
 .experience-stage {
     width: 100vw;
-    min-height: 300vh;
+    min-height: 500vh; /* Increased to allow more scroll room for years */
     position: relative;
     padding: 0;
 }
 
 .experience-pin {
-    padding: 6rem 1.5rem 2rem 1.5rem;
     position: sticky;
     top: 0;
     width: 100%;
     height: 100vh;
-    margin: 0;
-    border: 0;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    overflow-y: auto;
+    overflow: hidden;
+    background: transparent;
 }
 
-.timeline-track {
-    position: relative;
-    width: min(1100px, calc(100vw - 3rem));
-    min-height: 600px;
-    height: auto;
-    margin: 0 auto;
-    overflow: visible;
+/* Odometer / Slot Machine Styling */
+.year-display {
+    display: flex;
+    height: 1.1em; /* Fixed height for 1 digit */
+    overflow: hidden;
+    line-height: 1;
+    color: #eaea00;
+    text-shadow: 0 0 20px rgba(234, 234, 0, 0.4);
+    width: 4ch; /* Exactly 4 characters wide */
+    white-space: nowrap;
 }
 
-.timeline-events {
-    position: relative;
-    height: 100%;
+.year-digit-column {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 1rem 0;
-    gap: 2rem;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    width: 1ch; 
+    min-width: 1ch;
+    align-items: center;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
 }
 
-.timeline-item {
-    transition: opacity 0.35s ease, transform 0.35s ease, filter 0.35s ease;
-    transform-origin: center;
-    opacity: 0.35;
-    transform: scale(0.9);
-    filter: brightness(0.55);
+.year-digit-item {
+    height: 1.2em; /* Match line-height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1ch;
+    flex-shrink: 0;
 }
 
-.timeline-item.is-active {
-    opacity: 1;
-    transform: scale(1);
-    filter: brightness(1);
+.role-content-container {
+    animation: content-slide-up 0.5s ease-out;
 }
 
-.timeline-item .timeline-title {
-    transition: color 0.35s ease, text-shadow 0.35s ease;
-    color: #7a7a7a;
-    text-shadow: none;
+@keyframes content-slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.timeline-item.is-active .timeline-title {
-    color: #ffffff;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+.font-retro {
+    font-family: 'Press Start 2P', cursive;
 }
