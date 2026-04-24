@@ -155,27 +155,198 @@ document.addEventListener('DOMContentLoaded', () => {
         demoCard.addEventListener('mouseleave', showThumbnail);
         showThumbnail();
     }
+
+    // Project Slider Logic
+    const slider = document.getElementById('project-slider');
+    const prevBtn = document.getElementById('prev-project');
+    const nextBtn = document.getElementById('next-project');
+    let cards = Array.from(document.querySelectorAll('.project-card'));
+
+    if (slider && prevBtn && nextBtn && cards.length) {
+        let currentIndex = 0;
+        let isTransitioning = false;
+        let autoSlideTimer;
+
+        // Clone cards for infinite loop
+        const firstClones = cards.map(card => card.cloneNode(true));
+        const lastClones = cards.map(card => card.cloneNode(true));
+        
+        firstClones.forEach(clone => slider.appendChild(clone));
+        lastClones.reverse().forEach(clone => slider.insertBefore(clone, slider.firstChild));
+
+        const allCards = Array.from(slider.querySelectorAll('.project-card'));
+        const originalCount = cards.length;
+        currentIndex = originalCount; // Start at the first original card
+
+        const getCardWidth = () => {
+            // Adjust card width: currently ~60% on desktop, ~80% on mobile
+            // Change these factors to make cards wider/narrower
+            if (window.innerWidth >= 1024) return slider.offsetWidth / 3;
+            if (window.innerWidth >= 768) return slider.offsetWidth / 1.5;
+            return slider.offsetWidth * 0.8; 
+        };
+
+        const updateSlider = (smooth = true) => {
+            const cardWidth = getCardWidth();
+            const gap = window.innerWidth >= 768 ? 24 : 16;
+            
+            allCards.forEach(card => {
+                card.style.width = `${cardWidth}px`;
+                card.classList.remove('active-card');
+                
+                // Pause videos on inactive cards
+                const video = card.querySelector('video');
+                if (video) {
+                    video.pause();
+                    video.currentTime = 0;
+                }
+                const thumb = card.querySelector('.demo-thumbnail');
+                if (thumb) thumb.classList.add('opacity-100');
+            });
+
+            const containerWidth = slider.parentElement.offsetWidth;
+            const centerOffset = (containerWidth - cardWidth) / 2;
+            const totalOffset = currentIndex * (cardWidth + gap) - centerOffset;
+
+            slider.style.transition = smooth ? 'transform 0.7s cubic-bezier(0.23, 1, 0.32, 1)' : 'none';
+            slider.style.transform = `translateX(-${totalOffset}px)`;
+            
+            // Highlight center card
+            allCards[currentIndex].classList.add('active-card');
+        };
+
+        const handleInfiniteLoop = () => {
+            if (currentIndex >= originalCount * 2) {
+                currentIndex = originalCount;
+                updateSlider(false);
+            } else if (currentIndex < originalCount) {
+                currentIndex = originalCount * 2 - 1;
+                updateSlider(false);
+            }
+            isTransitioning = false;
+        };
+
+        const nextSlide = () => {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            currentIndex++;
+            updateSlider();
+            resetAutoSlide();
+        };
+
+        const prevSlide = () => {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            currentIndex--;
+            updateSlider();
+            resetAutoSlide();
+        };
+
+        const startAutoSlide = () => {
+            autoSlideTimer = setInterval(nextSlide, 5000);
+        };
+
+        const resetAutoSlide = () => {
+            clearInterval(autoSlideTimer);
+            startAutoSlide();
+        };
+
+        slider.addEventListener('transitionend', handleInfiniteLoop);
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        window.addEventListener('resize', () => updateSlider(false));
+        
+        // Initial setup
+        updateSlider(false);
+        startAutoSlide();
+    }
+
+    // Scroll Spy: Highlight nav links based on scroll position
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+    const sections = Array.from(navLinks).map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+
+    if (navLinks.length && sections.length) {
+        const activeClasses = ['text-[#eaea00]', 'md:border-b-4', 'md:border-[#eaea00]', 'md:pb-1'];
+        const inactiveClasses = ['text-[#e2e2e2]'];
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -70% 0px',
+            threshold: 0
+        };
+
+        const observerCallback = (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add(...activeClasses);
+                            link.classList.remove(...inactiveClasses);
+                        } else {
+                            link.classList.remove(...activeClasses);
+                            link.classList.add(...inactiveClasses);
+                        }
+                    });
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        sections.forEach(section => observer.observe(section));
+    }
+
+    // Mobile Menu Toggle
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuLinks = mobileMenu?.querySelectorAll('a');
+
+    if (mobileMenuToggle && mobileMenuClose && mobileMenu) {
+        const openMenu = () => {
+            mobileMenu.classList.remove('translate-x-full');
+            document.body.classList.add('overflow-hidden');
+        };
+
+        const closeMenu = () => {
+            mobileMenu.classList.add('translate-x-full');
+            document.body.classList.remove('overflow-hidden');
+        };
+
+        mobileMenuToggle.addEventListener('click', openMenu);
+        mobileMenuClose.addEventListener('click', closeMenu);
+        mobileMenuLinks.forEach(link => link.addEventListener('click', closeMenu));
+    }
 });
 
 const fullscreenButton = document.getElementById('fullscreen-toggle');
+const mobileFullscreenButton = document.getElementById('mobile-fullscreen-toggle');
+
+const toggleFullscreen = async () => {
+    try {
+        if (!document.fullscreenElement) {
+            await document.documentElement.requestFullscreen();
+        } else {
+            await document.exitFullscreen();
+        }
+    } catch (error) {
+        console.error('Fullscreen toggle failed:', error);
+    }
+};
 
 if (fullscreenButton) {
-    const updateFullscreenLabel = () => {
-        fullscreenButton.textContent = document.fullscreenElement ? 'EXIT FULL' : 'FULL SCREEN';
-    };
-
-    fullscreenButton.addEventListener('click', async () => {
-        try {
-            if (!document.fullscreenElement) {
-                await document.documentElement.requestFullscreen();
-            } else {
-                await document.exitFullscreen();
-            }
-            updateFullscreenLabel();
-        } catch (error) {
-            console.error('Fullscreen toggle failed:', error);
-        }
-    });
-
-    document.addEventListener('fullscreenchange', updateFullscreenLabel);
+    fullscreenButton.addEventListener('click', toggleFullscreen);
 }
+
+if (mobileFullscreenButton) {
+    mobileFullscreenButton.addEventListener('click', toggleFullscreen);
+}
+
+const updateFullscreenLabel = () => {
+    const label = document.fullscreenElement ? 'EXIT FULL' : 'FULL SCREEN';
+    if (fullscreenButton) fullscreenButton.textContent = label;
+    if (mobileFullscreenButton) mobileFullscreenButton.textContent = label;
+};
+
+document.addEventListener('fullscreenchange', updateFullscreenLabel);
