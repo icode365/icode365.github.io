@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: "Built various game prototypes for mobile games. Focused on complete game loops with polished UX in Unity."
         },
         {
-            yearRange: "2021",
+            yearRange: "2021 - 2022",
             years: [2021],
             role: "UNITY GAME DEVELOPER",
             company: "One Learning",
