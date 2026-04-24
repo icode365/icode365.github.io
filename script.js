@@ -403,9 +403,13 @@ if (mobileFullscreenButton) {
 }
 
 const updateFullscreenLabel = () => {
-    const label = document.fullscreenElement ? 'EXIT FULL' : 'FULL SCREEN';
-    if (fullscreenButton) fullscreenButton.textContent = label;
-    if (mobileFullscreenButton) mobileFullscreenButton.textContent = label;
+    const icon = document.fullscreenElement ? 'fullscreen_exit' : 'fullscreen';
+    if (fullscreenButton) fullscreenButton.innerHTML = `<span class="material-symbols-outlined text-4xl leading-none text-primary-fixed">${icon}</span>`;
+    if (mobileFullscreenButton) mobileFullscreenButton.innerHTML = `<span class="material-symbols-outlined text-5xl leading-none text-primary-fixed">${icon}</span>`;
 };
+
+document.addEventListener('fullscreenchange', updateFullscreenLabel);
+
+document.addEventListener('fullscreenchange', updateFullscreenLabel);
 
 document.addEventListener('fullscreenchange', updateFullscreenLabel);
