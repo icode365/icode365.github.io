@@ -84,9 +84,9 @@
 
 <!-- TopAppBar -->
 <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-20 bg-background/80 backdrop-blur-md border-b-4 border-[#353535] shadow-[0_4px_0_0_rgba(234,234,0,0.2)]">
-<!--    <div class="text-2xl font-black text-[#eaea00] tracking-widest font-space-grotesk uppercase tracking-tighter">-->
-<!--        PLAYER_1-->
-<!--    </div>-->
+    <!--    <div class="text-2xl font-black text-[#eaea00] tracking-widest font-space-grotesk uppercase tracking-tighter">-->
+    <!--        PLAYER_1-->
+    <!--    </div>-->
     <div class="hidden md:flex gap-8 items-center h-full">
         <a class="nav-link font-space-grotesk uppercase tracking-tighter hover:bg-[#353535]/50 transition-colors duration-100 active:translate-y-1"
            href="#hero">HOME</a>
@@ -113,14 +113,17 @@
 </nav>
 
 <!-- Mobile Menu Overlay -->
-<div id="mobile-menu" class="fixed inset-0 z-[60] bg-background/95 backdrop-blur-lg flex flex-col items-center justify-center gap-8 transition-transform duration-300 translate-x-full md:hidden">
+<div id="mobile-menu"
+     class="fixed inset-0 z-[60] bg-background/95 backdrop-blur-lg flex flex-col items-center justify-center gap-8 transition-transform duration-300 translate-x-full md:hidden">
     <button id="mobile-menu-close" class="absolute top-6 right-6 text-primary-fixed p-2">
         <span class="material-symbols-outlined text-4xl">close</span>
     </button>
     <a class="nav-link text-3xl font-black font-space-grotesk uppercase tracking-tighter" href="#hero">HOME</a>
     <a class="nav-link text-3xl font-black font-space-grotesk uppercase tracking-tighter" href="#stats">STATS</a>
-    <a class="nav-link text-3xl font-black font-space-grotesk uppercase tracking-tighter" href="#projects">HIGHLIGHTS</a>
-    <a class="nav-link text-3xl font-black font-space-grotesk uppercase tracking-tighter" href="#experience">MISSIONS</a>
+    <a class="nav-link text-3xl font-black font-space-grotesk uppercase tracking-tighter"
+       href="#projects">HIGHLIGHTS</a>
+    <a class="nav-link text-3xl font-black font-space-grotesk uppercase tracking-tighter"
+       href="#experience">MISSIONS</a>
     <a class="nav-link text-3xl font-black font-space-grotesk uppercase tracking-tighter" href="#lore">QUESTS</a>
     <button id="mobile-fullscreen-toggle"
             class="mt-8 p-2 text-primary-fixed bg-transparent border-0 shadow-none hover:scale-110 active:translate-y-1 transition-transform">
@@ -130,12 +133,14 @@
 
 <main class="pt-20">
     <!-- Section 1: Hero Section -->
-    <section class="relative min-h-screen flex flex-col items-center justify-center px-4 md:px-6 overflow-hidden pixel-grid"
-             id="hero">
+    <section
+            class="relative min-h-screen flex flex-col items-center justify-center px-4 md:px-6 overflow-hidden pixel-grid"
+            id="hero">
         <div class="absolute inset-0 scanline z-10"></div>
         <div class="z-20 text-center max-w-4xl py-20">
             <div class="mb-6 md:mb-8 inline-block p-2 md:p-4 border-4 border-secondary-fixed overflow-hidden bg-surface-container-high/80 backdrop-blur-xl shadow-[4px_4px_0_0_#00fbfb] md:shadow-[8px_8px_0_0_#00fbfb]">
-                <img alt="Retro Arcade Sprite" class="w-48 h-48 md:w-64 md:h-64 object-cover scale-150" style="object-position: center 0%;"
+                <img alt="Retro Arcade Sprite" class="w-48 h-48 md:w-64 md:h-64 object-cover scale-150"
+                     style="object-position: center 0%;"
                      data-alt="Digital pixel art illustration of a retro gaming controller glowing with cyan and magenta neon light against a dark technical background"
                      src="images/self.jpeg"/>
             </div>
@@ -145,14 +150,28 @@
             <p class="text-lg md:text-2xl font-label uppercase tracking-[0.1em] md:tracking-[0.2em] text-secondary-fixed mb-8 md:mb-12 drop-shadow-[0_0_10px_rgba(0,251,251,0.5)]">
                 Unity Developer
             </p>
-<!--            <div class="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center">-->
-<!--                <button class="w-full sm:w-auto bg-primary-fixed text-on-primary-fixed text-xl md:text-2xl px-8 md:px-12 py-3 md:py-4 font-black font-space-grotesk tracking-widest border-b-4 md:border-b-8 border-on-primary-container hover:brightness-110 active:translate-y-2 active:border-b-0 transition-all shadow-[0_0_20px_rgba(234,234,0,0.4)]">-->
-<!--                    PRESS START-->
-<!--                </button>-->
-<!--                <button class="w-full sm:w-auto border-4 border-outline-variant text-on-background text-xl md:text-2xl px-8 md:px-12 py-3 md:py-4 font-black font-space-grotesk tracking-widest hover:bg-surface-container-highest/50 backdrop-blur transition-all">-->
-<!--                    LOAD GAME-->
-<!--                </button>-->
-<!--            </div>-->
+
+            <div class="glass-panel mx-auto max-w-2xl p-5 md:p-6 border-l-4 border-primary-fixed text-left shadow-[4px_4px_0_0_rgba(0,251,251,0.35)]">
+                <div class="flex items-center gap-3 mb-3">
+                        <span class="material-symbols-outlined text-primary-fixed"
+                              style="font-variation-settings: 'FILL' 1;">badge</span>
+                    <span class="font-label text-xs md:text-sm uppercase tracking-[0.25em] text-secondary-fixed font-bold">
+                            Player Bio
+                        </span>
+                </div>
+                <p class="font-body text-sm md:text-base leading-relaxed text-on-background/85">
+                    Unity Developer with ~3 years of experience building and maintaining VR training applications using
+                    the Unity engine and C#. Skilled in developing scalable runtime systems, modular content pipelines,
+                    and performance-optimized immersive environments. Experienced working across diverse projects and
+                    responsibilities, including leading small development teams, coordinating with clients, scheduling
+                    development tasks, conducting product demos, and participating in technical interviews for new
+                    candidates. Comfortable operating across the full development lifecycle—collaborating with artists
+                    and designers, building internal tools and delivering stable production builds. Seeking to apply
+                    solid Unity engineering skills and creative thinking to contribute to game development or
+                    interactive media teams.
+                </p>
+            </div>
+
         </div>
         <!-- Floating Decoration -->
         <div class="absolute bottom-10 right-10 hidden lg:block opacity-20">
@@ -250,19 +269,31 @@
                 <h2 class="text-3xl md:text-4xl font-black font-headline uppercase tracking-tighter border-l-8 border-secondary-fixed pl-6">
                     HIGHLIGHTS</h2>
                 <div class="flex gap-4 items-center">
-                    <span class="font-mono text-secondary-fixed hidden md:block mr-4">SELECT_STAGE_01-05</span>
-                    <button id="prev-project" class="bg-surface-container-highest hover:bg-secondary-fixed hover:text-on-secondary-fixed p-2 border-2 border-secondary-fixed transition-colors active:translate-y-1" title="Previous Project">
+                    <button id="prev-project"
+                            class="bg-surface-container-highest hover:bg-secondary-fixed hover:text-on-secondary-fixed p-2 border-2 border-secondary-fixed transition-colors active:translate-y-1"
+                            title="Previous Project">
                         <span class="material-symbols-outlined block">arrow_back</span>
                     </button>
-                    <button id="next-project" class="bg-surface-container-highest hover:bg-secondary-fixed hover:text-on-secondary-fixed p-2 border-2 border-secondary-fixed transition-colors active:translate-y-1" title="Next Project">
+                    <button id="next-project"
+                            class="bg-surface-container-highest hover:bg-secondary-fixed hover:text-on-secondary-fixed p-2 border-2 border-secondary-fixed transition-colors active:translate-y-1"
+                            title="Next Project">
                         <span class="material-symbols-outlined block">arrow_forward</span>
                     </button>
                 </div>
             </div>
             <div id="project-slider-container" class="cursor-grab active:cursor-grabbing">
-                <div id="project-slider" class="flex gap-4 md:gap-6 transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]">
+                <div id="project-slider"
+                     class="flex gap-4 md:gap-6 transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]">
                     <!-- Project Card 1 -->
-                    <div class="project-card flex-none w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group glass-panel shadow-[4px_4px_0_0_#353535] hover:shadow-[12px_12px_0_0_#eaea00] transition-all overflow-hidden border-2 border-secondary-fixed/30">
+                    <div class="project-card flex-none w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group glass-panel shadow-[4px_4px_0_0_#353535] hover:shadow-[12px_12px_0_0_#eaea00] transition-all overflow-hidden border-2 border-secondary-fixed/30 cursor-pointer"
+                         role="button"
+                         tabindex="0"
+                         data-project-title="Infinity Workshop"
+                         data-project-stage="STAGE 01"
+                         data-project-image="Videos/demo_thumbnail.png"
+                         data-project-tags="C# // EDITOR_API,ASSET_PIPELINE,UNITY_PACKAGE"
+                         data-project-description="A custom asset handling solution for Unity projects. Built as a complete pipeline to simplify asset organization, processing, and editor-side workflows."
+                         data-project-details="Infinity Workshop focuses on improving Unity production workflows by reducing repeated manual asset setup. It includes custom editor tooling, asset handling rules, and pipeline-friendly structure so projects stay cleaner and easier to maintain as they scale.">
                         <div class="image-container">
                             <img
                                     class="demo-thumbnail absolute inset-0 w-full h-full object-cover transition-opacity duration-300 opacity-100"
@@ -282,7 +313,8 @@
                         </div>
                         <div class="p-4">
                             <h3 class="text-xl font-black font-headline uppercase mb-1">Infinity Workshop</h3>
-                            <p class="text-xs opacity-80 mb-4">A custom asset handling solution for Unity projects. It's not
+                            <p class="text-xs opacity-80 mb-4">A custom asset handling solution for Unity projects. It's
+                                not
                                 just a custom editor, it's an entire pipeline.</p>
                             <div class="flex flex-wrap gap-2 mt-auto">
                                 <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">C# // EDITOR_API</span>
@@ -292,18 +324,31 @@
                         </div>
                     </div>
                     <!-- Project Card 2 -->
-                    <div class="project-card flex-none w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group glass-panel shadow-[4px_4px_0_0_#353535] hover:shadow-[12px_12px_0_0_#eaea00] transition-all overflow-hidden border-2 border-secondary-fixed/30">
+                    <div class="project-card flex-none w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group glass-panel shadow-[4px_4px_0_0_#353535] hover:shadow-[12px_12px_0_0_#eaea00] transition-all overflow-hidden border-2 border-secondary-fixed/30 cursor-pointer"
+                         role="button"
+                         tabindex="0"
+                         data-project-title="LOCAL MULTIPLYER"
+                         data-project-stage="STAGE 02"
+                         data-project-image="images/meta-shared-spatial-anchors.webp"
+                         data-project-tags="C# // UNITY,SPATIAL_ANCHORS,META_SERVICES,FUSION_MULTIPLAYER,PASSTHROUGH"
+                         data-project-description="Creating XR application that enables Local Multiplayer in XR with
+                    Passthrough."
+                         data-project-details="Built a POC using Meta Spatial Anchors to enable shared, persistent AR space
+                    across multiple users.Implemented local multiplayer with passthrough in XR, aligning virtual objects
+                    consistently in the real world.Focused on anchor synchronization, low-latency networking, and stable
+                    spatial mapping.Demonstrated collaborative interactions in a co-located mixed reality environment.">
                         <div class="image-container">
                             <img alt="Voxel World" class="w-full h-full object-cover"
                                  data-alt="Vibrant voxel-based fantasy world with a small hero character standing on a cliff overlooking a blocky forest"
-                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvhaLCqIoGCmkybb25jJA97vMzwTO6K5Zxqfob4_zHoG6Q0L9LQqkso-b6IYBWw0iercaSVnB4D16R5gZXbi9CF_KPcDGBbciGuK_t-fsERIDFg3tjS8HirSZGGXo_Nv1_NNB-t0KEPU8NTLv5do9dpIpyWJTGV0i7Qu_iqxbURtxsK2ijPG25SVEPWkFyFLCX-4TQZkjg9duKfLVC1yRrbHbvpraKyT4SF_QFZYXXIPDQFUClW6PQXQAPMqTQAxjRzO-8C2EWlqAH"/>
+                                 src="images/meta-shared-spatial-anchors.webp"/>
                             <div class="absolute top-3 right-3 bg-primary-fixed text-on-primary-fixed px-2 py-0.5 font-bold text-[10px] shadow-lg">
                                 STAGE 02
                             </div>
                         </div>
                         <div class="p-4">
                             <h3 class="text-xl font-black font-headline uppercase mb-1">LOCAL MULTIPLAYER</h3>
-                            <p class="text-xs opacity-80 mb-4">POC project implementing Meta's Shared Spatial Anchors and
+                            <p class="text-xs opacity-80 mb-4">POC project implementing Meta's Shared Spatial Anchors
+                                and
                                 Passthrough feature.</p>
                             <div class="flex flex-wrap gap-2 mt-auto">
                                 <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">META_XR_SDK</span>
@@ -313,7 +358,17 @@
                         </div>
                     </div>
                     <!-- Project Card 3 -->
-                    <div class="project-card flex-none w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group glass-panel shadow-[4px_4px_0_0_#353535] hover:shadow-[12px_12px_0_0_#eaea00] transition-all overflow-hidden border-2 border-secondary-fixed/30">
+                    <div class="project-card flex-none w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group glass-panel shadow-[4px_4px_0_0_#353535] hover:shadow-[12px_12px_0_0_#eaea00] transition-all overflow-hidden border-2 border-secondary-fixed/30 cursor-pointer"
+                         role="button"
+                         tabindex="0"
+                         data-project-title="CUSTOM VR GAMEPLAY"
+                         data-project-stage="STAGE 03"
+                         data-project-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCAnRtPTtgkU0TCv5ziNc5p1-Q-OBj-iox6B6AzdMypGNCidXt7LV1M6lJD0h6yqsP0DSZFV65L4zyMrRvMqF4iioaQocX-qoo4aigl3SMUONyMdqScC37o_H0cWdZDE5K7zv_3eeAVLzqIEE-s64SdYA91DjBYYlkEKiERouK221wXAxgvvIUuU-mJW-JBRTO46_xGiPilo5pn22TdemayztvxIIyfG92IFtijHrYSvopwEJ1oQbQBOm4sq3wt0p9XviGXRGaHxzjj"
+                         data-project-tags="C# // UNITY,PHOTON_FUSION,CUSTOMIZABLE,EVENT_DRIVEN"
+                         data-project-description="Custom asset handling solution for Unity projects. Built as a complete pipeline to simplify asset organization, processing, and editor-side workflows."
+                         data-project-details="Built as modular, event-driven components with well-defined internal state handling.
+Enabled high configurability and reuse across training scenarios.
+Focused on precise interactions, scalability, and clean integration within Unity XR workflows">
                         <div class="image-container">
                             <img alt="Sci-Fi Console" class="w-full h-full object-cover"
                                  data-alt="Close up of a sci-fi computer interface with scrolling green code and circular data visualizations"
@@ -324,7 +379,8 @@
                         </div>
                         <div class="p-4">
                             <h3 class="text-xl font-black font-headline uppercase mb-1">CUSTOM VR GAMEPLAY</h3>
-                            <p class="text-xs opacity-80 mb-4">Implemented VR gameplay features based on requirements like
+                            <p class="text-xs opacity-80 mb-4">Implemented VR gameplay features based on requirements
+                                like
                                 step dials with customizable steps.</p>
                             <div class="flex flex-wrap gap-2 mt-auto">
                                 <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">VR_INTERACTIONS</span>
@@ -334,7 +390,15 @@
                         </div>
                     </div>
                     <!-- Project Card 4 -->
-                    <div class="project-card flex-none w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group glass-panel shadow-[4px_4px_0_0_#353535] hover:shadow-[12px_12px_0_0_#eaea00] transition-all overflow-hidden border-2 border-secondary-fixed/30">
+                    <div class="project-card flex-none w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group glass-panel shadow-[4px_4px_0_0_#353535] hover:shadow-[12px_12px_0_0_#eaea00] transition-all overflow-hidden border-2 border-secondary-fixed/30 cursor-pointer"
+                         role="button"
+                         tabindex="0"
+                         data-project-title="AI-POWERED FEATURES"
+                         data-project-stage="STAGE 04"
+                         data-project-image="Videos/demo_thumbnail.png"
+                         data-project-tags="C# // ChatGPT API,AI,"
+                         data-project-description="Developed AI-powered features including real-time speech-to-text and conversational chat within a VR environment."
+                         data-project-details="Enabled hands-free interaction using voice input, improving accessibility and user flow. Integrated low-latency transcription with contextual responses for interactive scenarios. Demonstrated seamless AI-driven communication and control in immersive applications.">
                         <div class="image-container">
                             <img alt="Sci-Fi Console" class="w-full h-full object-cover"
                                  data-alt="Close up of a sci-fi computer interface with scrolling green code and circular data visualizations"
@@ -353,8 +417,20 @@
                                 <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">AI_NPC</span>
                             </div>
                         </div>
-                    </div><!-- Project Card 5 -->
-                    <div class="project-card flex-none w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group glass-panel shadow-[4px_4px_0_0_#353535] hover:shadow-[12px_12px_0_0_#eaea00] transition-all overflow-hidden border-2 border-secondary-fixed/30">
+                    </div>
+                    <!-- Project Card 5 -->
+                    <div class="project-card flex-none w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group glass-panel shadow-[4px_4px_0_0_#353535] hover:shadow-[12px_12px_0_0_#eaea00] transition-all overflow-hidden border-2 border-secondary-fixed/30 cursor-pointer"
+                         role="button"
+                         tabindex="0"
+                         data-project-title="GENERIC XR FEATURES"
+                         data-project-stage="STAGE 05"
+                         data-project-image="Videos/demo_thumbnail.png"
+                         data-project-tags="C# // UNITY,VECTORS"
+                         data-project-description="Designed custom XR interaction mechanics including a VR Distance Measurer, lancing system, and step dial controls."
+                         data-project-details="Designed and implemented modular XR gameplay systems for Unity-based VR applications, focusing on interaction precision and runtime flexibility.
+Built custom mechanics like Step Dial controls, VR Distance Measurer, and multi-point runtime measurement systems for spatial interaction.
+Developed a scalable tagging system for dynamic object annotation and real-time updates in 3D environments.
+Integrated Passthrough and XR UI systems to enhance immersion and usability across training and simulation scenarios.">
                         <div class="image-container">
                             <img alt="Sci-Fi Console" class="w-full h-full object-cover"
                                  data-alt="Close up of a sci-fi computer interface with scrolling green code and circular data visualizations"
@@ -366,11 +442,39 @@
                         <div class="p-4">
                             <h3 class="text-xl font-black font-headline uppercase mb-1">GENERIC XR FEATURES</h3>
                             <p class="text-xs opacity-80 mb-4">VR Distance measurement system, Runtime scalable VR Tag
-                                system.</p>
+                                system, Passthrough, etc.</p>
                             <div class="flex flex-wrap gap-2 mt-auto">
                                 <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">XR_UTILS</span>
                                 <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">RUNTIME_UI</span>
                                 <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">VR_CALIBRATION</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 6-->
+                    <div class="project-card flex-none w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group glass-panel shadow-[4px_4px_0_0_#353535] hover:shadow-[12px_12px_0_0_#eaea00] transition-all overflow-hidden border-2 border-secondary-fixed/30 cursor-pointer"
+                         role="button"
+                         tabindex="0"
+                         data-project-title="POKEDEX"
+                         data-project-stage="STAGE 06"
+                         data-project-image="images/pokedex_api.png"
+                         data-project-tags="C# // UNITY,REST API,WEB REQUEST,ASYNCHRONOUS"
+                         data-project-description="The system fetches Pokémon data in real time and displays structured information in a clean interface."
+                         data-project-details="PokeInfo is a lightweight Pokédex application that pulls real-time Pokémon data using a public API.
+Instead of static entries, every search fetches live stats, types, and information directly from the source.">
+                        <div class="image-container">
+                            <img alt="Sci-Fi Console" class="w-full h-full object-cover"
+                                 data-alt="Close up of a sci-fi computer interface with scrolling green code and circular data visualizations"
+                                 src="images/pokedex_api.png"/>
+                            <div class="absolute top-3 right-3 bg-primary-fixed text-on-primary-fixed px-2 py-0.5 font-bold text-[10px] shadow-lg">
+                                STAGE 06
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-xl font-black font-headline uppercase mb-1">PokeDex API App</h3>
+                            <p class="text-xs opacity-80 mb-4">PokeDex based Pokemon stat display app.</p>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">API</span>
+                                <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">RUNTIME_UI</span>
                             </div>
                         </div>
                     </div>
@@ -383,7 +487,8 @@
         <div class="experience-pin flex items-center justify-center">
             <!-- Large Background Year -->
             <div class="absolute inset-0 flex items-center justify-start pointer-events-none select-none opacity-80 px-4 md:px-12 overflow-hidden bg-black/20">
-                <div class="year-display font-retro text-[10vh] md:text-[25vh] flex justify-start items-start" id="experience-year-container">
+                <div class="year-display font-retro text-[10vh] md:text-[25vh] flex justify-start items-start"
+                     id="experience-year-container">
                     <!-- Dynamic odometer columns will be injected here -->
                 </div>
             </div>
@@ -395,11 +500,15 @@
                 <!-- Right: Dynamic Role Content -->
                 <div class="role-content-container glass-panel p-8 md:p-12 min-h-[500px] flex flex-col justify-center">
                     <div id="experience-content">
-                        <h2 class="text-secondary-fixed font-retro text-sm mb-4 tracking-tighter" id="exp-year-label">2019 - 2020</h2>
-                        <h3 class="text-3xl md:text-5xl font-black font-headline uppercase mb-2 text-white" id="exp-role">GAME DEVELOPER</h3>
-                        <p class="text-primary-fixed font-bold text-lg md:text-xl mb-6" id="exp-company">FREELANCER / ELEMENTRIX</p>
+                        <h2 class="text-secondary-fixed font-retro text-sm mb-4 tracking-tighter" id="exp-year-label">
+                            2019 - 2020</h2>
+                        <h3 class="text-3xl md:text-5xl font-black font-headline uppercase mb-2 text-white"
+                            id="exp-role">GAME DEVELOPER</h3>
+                        <p class="text-primary-fixed font-bold text-lg md:text-xl mb-6" id="exp-company">FREELANCER /
+                            ELEMENTRIX</p>
                         <p class="text-on-background opacity-80 leading-relaxed md:text-lg" id="exp-desc">
-                            Built various game prototypes for mobile games. Focused on complete game loops with polished UX in Unity.
+                            Built various game prototypes for mobile games. Focused on complete game loops with polished
+                            UX in Unity.
                         </p>
                     </div>
                 </div>
@@ -411,59 +520,63 @@
         <div class="sticky-stage-pin">
             <div class="max-w-7xl mx-auto glass-panel p-6 md:p-12 border-secondary-fixed/30 w-full">
                 <div class="flex items-center gap-4 mb-8 md:mb-16">
-                <span class="material-symbols-outlined text-3xl md:text-4xl text-tertiary-fixed-dim">auto_stories</span>
-                <h2 class="text-3xl md:text-4xl font-black font-headline uppercase tracking-tighter">SIDE QUESTS</h2>
-                <div class="flex-grow h-1 bg-surface-container-highest/50"></div>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-                <!-- Article 1 -->
-                <article
-                        class="bg-surface-container-high/40 backdrop-blur-md p-4 border-t-4 border-on-secondary-container hover:bg-surface-container-high/80 transition-all border-x border-b border-white/5">
-                    <img alt="Code Close up"
-                         class="w-full aspect-square object-cover mb-4 contrast-125 grayscale hover:grayscale-0 transition-all"
-                         data-alt="Blurred close up of complex computer code on a monitor with vibrant synthwave colored syntax highlighting"
-                         src="images/gravity-sketch-thumbnail.webp"/>
-                    <span class="text-[10px] font-mono text-on-secondary-container mb-2 block tracking-widest uppercase font-bold">UX Analysis // 01</span>
-                    <h4 class="font-headline font-bold uppercase leading-tight mb-4 text-lg">Gravity Sketch</h4>
-                    <button class="flex items-center gap-2 font-label text-xs font-bold text-primary-fixed hover:text-white"
-                            onclick="window.location.href='https://autovrse.notion.site/Gravity-Sketch-99130652d9d647d09f798004a9b3cd05'">
-                        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
-                        OPEN LOG
-                    </button>
-                </article>
-                <!-- Article 2 -->
-                <article
-                        class="bg-surface-container-high/40 backdrop-blur-md p-4 border-t-4 border-on-secondary-container hover:bg-surface-container-high/80 transition-all border-x border-b border-white/5">
-                    <img alt="Shader Art"
-                         class="w-full aspect-square object-cover mb-4 contrast-125 grayscale hover:grayscale-0 transition-all"
-                         data-alt="Mathematical fractals and geometric patterns glowing in neon pink and yellow against a dark background"
-                         src="images/shapesxr-thumbnail.webp"/>
-                    <span class="text-[10px] font-mono text-on-secondary-container mb-2 block tracking-widest uppercase font-bold">UX Analysis // 02</span>
-                    <h4 class="font-headline font-bold uppercase leading-tight mb-4 text-lg">Shapes-XR</h4>
-                    <button class="flex items-center gap-2 font-label text-xs font-bold text-primary-fixed hover:text-white"
-                            onclick="window.location.href='https://autovrse.notion.site/Shapes-XR-790d4af115ec4b3ab8352ddfc3ef833b'">
-                        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
-                        OPEN LOG
-                    </button>
-                </article>
-                <!-- Article 3 -->
-                <article
-                        class="bg-surface-container-high/40 backdrop-blur-md p-4 border-t-4 border-on-secondary-container hover:bg-surface-container-high/80 transition-all border-x border-b border-white/5">
-                    <img alt="Game Console"
-                         class="w-full aspect-square object-cover mb-4 contrast-125 grayscale hover:grayscale-0 transition-all"
-                         data-alt="A vintage 80s television screen showing static and a distorted 'Game Over' message in red pixels"
-                         src="images/campfire-thumbnail.webp"/>
-                    <span class="text-[10px] font-mono text-on-secondary-container mb-2 block tracking-widest uppercase font-bold">UX Analysis // 03</span>
-                    <h4 class="font-headline font-bold uppercase leading-tight mb-4 text-lg">Campfire</h4>
-                    <button class="flex items-center gap-2 font-label text-xs font-bold text-primary-fixed hover:text-white"
-                            onclick="window.location.href='https://autovrse.notion.site/Campfire-79e7cf0d8f154797a2357293d022d633'">
-                        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
-                        OPEN LOG
-                    </button>
-                </article>
+                    <span class="material-symbols-outlined text-3xl md:text-4xl text-tertiary-fixed-dim">auto_stories</span>
+                    <h2 class="text-3xl md:text-4xl font-black font-headline uppercase tracking-tighter">SIDE
+                        QUESTS</h2>
+                    <div class="flex-grow h-1 bg-surface-container-highest/50"></div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                    <!-- Article 1 -->
+                    <article
+                            class="bg-surface-container-high/40 backdrop-blur-md p-4 border-t-4 border-on-secondary-container hover:bg-surface-container-high/80 transition-all border-x border-b border-white/5">
+                        <img alt="Code Close up"
+                             class="w-full aspect-square object-cover mb-4 contrast-125 grayscale hover:grayscale-0 transition-all"
+                             data-alt="Blurred close up of complex computer code on a monitor with vibrant synthwave colored syntax highlighting"
+                             src="images/gravity-sketch-thumbnail.webp"/>
+                        <span class="text-[10px] font-mono text-on-secondary-container mb-2 block tracking-widest uppercase font-bold">UX Analysis // 01</span>
+                        <h4 class="font-headline font-bold uppercase leading-tight mb-4 text-lg">Gravity Sketch</h4>
+                        <button class="flex items-center gap-2 font-label text-xs font-bold text-primary-fixed hover:text-white"
+                                onclick="window.location.href='https://autovrse.notion.site/Gravity-Sketch-99130652d9d647d09f798004a9b3cd05'">
+                            <span class="material-symbols-outlined text-base"
+                                  style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+                            OPEN LOG
+                        </button>
+                    </article>
+                    <!-- Article 2 -->
+                    <article
+                            class="bg-surface-container-high/40 backdrop-blur-md p-4 border-t-4 border-on-secondary-container hover:bg-surface-container-high/80 transition-all border-x border-b border-white/5">
+                        <img alt="Shader Art"
+                             class="w-full aspect-square object-cover mb-4 contrast-125 grayscale hover:grayscale-0 transition-all"
+                             data-alt="Mathematical fractals and geometric patterns glowing in neon pink and yellow against a dark background"
+                             src="images/shapesxr-thumbnail.webp"/>
+                        <span class="text-[10px] font-mono text-on-secondary-container mb-2 block tracking-widest uppercase font-bold">UX Analysis // 02</span>
+                        <h4 class="font-headline font-bold uppercase leading-tight mb-4 text-lg">Shapes-XR</h4>
+                        <button class="flex items-center gap-2 font-label text-xs font-bold text-primary-fixed hover:text-white"
+                                onclick="window.location.href='https://autovrse.notion.site/Shapes-XR-790d4af115ec4b3ab8352ddfc3ef833b'">
+                            <span class="material-symbols-outlined text-base"
+                                  style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+                            OPEN LOG
+                        </button>
+                    </article>
+                    <!-- Article 3 -->
+                    <article
+                            class="bg-surface-container-high/40 backdrop-blur-md p-4 border-t-4 border-on-secondary-container hover:bg-surface-container-high/80 transition-all border-x border-b border-white/5">
+                        <img alt="Game Console"
+                             class="w-full aspect-square object-cover mb-4 contrast-125 grayscale hover:grayscale-0 transition-all"
+                             data-alt="A vintage 80s television screen showing static and a distorted 'Game Over' message in red pixels"
+                             src="images/campfire-thumbnail.webp"/>
+                        <span class="text-[10px] font-mono text-on-secondary-container mb-2 block tracking-widest uppercase font-bold">UX Analysis // 03</span>
+                        <h4 class="font-headline font-bold uppercase leading-tight mb-4 text-lg">Campfire</h4>
+                        <button class="flex items-center gap-2 font-label text-xs font-bold text-primary-fixed hover:text-white"
+                                onclick="window.location.href='https://autovrse.notion.site/Campfire-79e7cf0d8f154797a2357293d022d633'">
+                            <span class="material-symbols-outlined text-base"
+                                  style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+                            OPEN LOG
+                        </button>
+                    </article>
+                </div>
             </div>
         </div>
-    </div>
     </section>
 </main>
 
@@ -481,5 +594,76 @@
         2026 GAME_OVER_MAN // NO RIGHTS RESERVED
     </div>
 </footer>
+
+<div id="project-detail-modal"
+     class="project-detail-modal fixed inset-0 z-[100] hidden items-center justify-center px-4 py-8"
+     aria-hidden="true">
+    <div id="project-detail-backdrop" class="absolute inset-0 bg-black/80 backdrop-blur-md"></div>
+
+    <section
+            class="project-detail-panel glass-panel relative z-10 w-full max-w-5xl max-h-[90vh] overflow-y-auto border-2 border-secondary-fixed shadow-[8px_8px_0_0_#eaea00]"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="project-detail-title">
+        <div class="flex items-center justify-between gap-4 border-b-4 border-surface-bright p-4 md:p-6">
+            <div>
+                <p id="project-detail-stage" class="font-mono text-xs text-secondary-fixed tracking-widest mb-2">
+                    STAGE 00
+                </p>
+                <h2 id="project-detail-title"
+                    class="text-2xl md:text-4xl font-black font-headline uppercase tracking-tighter text-primary-fixed">
+                    PROJECT TITLE
+                </h2>
+            </div>
+
+            <button id="project-detail-x"
+                    class="project-detail-close-btn text-primary-fixed hover:text-white active:translate-y-1 transition-transform"
+                    type="button"
+                    aria-label="Close project details">
+                <span class="material-symbols-outlined text-4xl">close</span>
+            </button>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-6 p-4 md:p-6">
+            <div class="border-2 border-secondary-fixed/40 bg-surface-container-highest/40 p-2">
+                <img id="project-detail-image"
+                     class="w-full aspect-square object-cover grayscale contrast-125"
+                     src=""
+                     alt="Selected project preview"/>
+            </div>
+
+            <div class="flex flex-col justify-between gap-6">
+                <div>
+                    <p class="font-label uppercase text-xs tracking-[0.25em] text-tertiary-fixed-dim mb-3">
+                        Mission Brief
+                    </p>
+                    <p id="project-detail-description"
+                       class="text-base md:text-lg leading-relaxed text-on-background/90 mb-6">
+                        Project short description.
+                    </p>
+
+                    <p class="font-label uppercase text-xs tracking-[0.25em] text-secondary-fixed mb-3">
+                        Dev Log
+                    </p>
+                    <p id="project-detail-details"
+                       class="text-sm md:text-base leading-relaxed text-on-background/75">
+                        Project detailed description.
+                    </p>
+                </div>
+
+                <div>
+                    <div id="project-detail-tags" class="flex flex-wrap gap-2 mb-6"></div>
+
+                    <button id="project-detail-close"
+                            class="w-full sm:w-auto bg-primary-fixed text-on-primary-fixed px-6 py-3 font-label uppercase font-black tracking-widest border-2 border-primary-fixed hover:bg-transparent hover:text-primary-fixed active:translate-y-1 transition-all"
+                            type="button">
+                        Close Panel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
 </body>
 </html>

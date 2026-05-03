@@ -135,7 +135,7 @@ body {
 /*sticky panels*/
 .sticky-stage {
     width: 100%;
-    min-height:var(--stage-height, 200vh);
+    min-height: var(--stage-height, 200vh);
     position: relative;
 }
 
@@ -194,10 +194,47 @@ body {
     width: 100%;
 }
 
+
 .project-card.active-card {
     opacity: 1;
     transform: scale(1);
     z-index: 10;
+}
+
+.project-detail-modal.is-open {
+    display: flex;
+}
+
+.project-detail-panel {
+    animation: project-detail-pop 0.25s ease-out;
+}
+
+.project-detail-close-btn .material-symbols-outlined {
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.project-detail-close-btn:hover .material-symbols-outlined {
+    transform: scale(1.15) rotate(6deg);
+    filter: drop-shadow(0 0 8px currentColor);
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+@keyframes project-detail-pop {
+    from {
+        opacity: 0;
+        transform: translateY(24px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.sticky-stage-pin::-webkit-scrollbar {
+    width: 6px;
 }
 
 .sticky-stage-pin::-webkit-scrollbar {
@@ -245,25 +282,47 @@ body {
 }
 
 @keyframes icon-jolt {
-    0%, 100% { transform: scale(1.2) translateY(0); }
-    50% { transform: scale(1.3) translateY(-4px) rotate(-10deg); }
+    0%, 100% {
+        transform: scale(1.2) translateY(0);
+    }
+    50% {
+        transform: scale(1.3) translateY(-4px) rotate(-10deg);
+    }
 }
 
 @keyframes icon-pulse {
-    0% { transform: scale(1.2); opacity: 1; }
-    50% { transform: scale(1.4); opacity: 0.7; }
-    100% { transform: scale(1.2); opacity: 1; }
+    0% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.4);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
 }
 
 @keyframes icon-float {
-    0%, 100% { transform: scale(1.2) translateY(0); }
-    50% { transform: scale(1.2) translateY(-8px); }
+    0%, 100% {
+        transform: scale(1.2) translateY(0);
+    }
+    50% {
+        transform: scale(1.2) translateY(-8px);
+    }
 }
 
 @keyframes icon-bounce {
-    0%, 100% { transform: scale(1.2) translateY(0); }
-    50% { transform: scale(1.2) translateY(-5px); }
+    0%, 100% {
+        transform: scale(1.2) translateY(0);
+    }
+    50% {
+        transform: scale(1.2) translateY(-5px);
+    }
 }
+
 .experience-stage {
     width: 100vw;
     min-height: 500vh; /* Increased to allow more scroll room for years */
@@ -299,7 +358,7 @@ body {
     display: flex;
     flex-direction: column;
     transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    width: 1ch; 
+    width: 1ch;
     min-width: 1ch;
     align-items: center;
     flex-shrink: 0;

@@ -413,3 +413,72 @@ document.addEventListener('fullscreenchange', updateFullscreenLabel);
 document.addEventListener('fullscreenchange', updateFullscreenLabel);
 
 document.addEventListener('fullscreenchange', updateFullscreenLabel);
+
+const projectCards = document.querySelectorAll('.project-card');
+const projectDetailModal = document.getElementById('project-detail-modal');
+const projectDetailBackdrop = document.getElementById('project-detail-backdrop');
+const projectDetailClose = document.getElementById('project-detail-close');
+const projectDetailX = document.getElementById('project-detail-x');
+
+const projectDetailStage = document.getElementById('project-detail-stage');
+const projectDetailTitle = document.getElementById('project-detail-title');
+const projectDetailImage = document.getElementById('project-detail-image');
+const projectDetailDescription = document.getElementById('project-detail-description');
+const projectDetailDetails = document.getElementById('project-detail-details');
+const projectDetailTags = document.getElementById('project-detail-tags');
+
+function openProjectDetail(card) {
+    const title = card.dataset.projectTitle || 'Project Details';
+    const stage = card.dataset.projectStage || 'STAGE 00';
+    const image = card.dataset.projectImage || '';
+    const description = card.dataset.projectDescription || '';
+    const details = card.dataset.projectDetails || '';
+    const tags = card.dataset.projectTags
+        ? card.dataset.projectTags.split(',').map((tag) => tag.trim()).filter(Boolean)
+        : [];
+
+    projectDetailStage.textContent = stage;
+    projectDetailTitle.textContent = title;
+    projectDetailImage.src = image;
+    projectDetailImage.alt = `${title} preview`;
+    projectDetailDescription.textContent = description;
+    projectDetailDetails.textContent = details;
+
+    projectDetailTags.innerHTML = tags
+        .map((tag) => `<span class="px-2 py-1 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">${tag}</span>`)
+        .join('');
+
+    projectDetailModal.classList.remove('hidden');
+    projectDetailModal.classList.add('is-open');
+    projectDetailModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+    projectDetailX.focus();
+}
+
+function closeProjectDetail() {
+    projectDetailModal.classList.add('hidden');
+    projectDetailModal.classList.remove('is-open');
+    projectDetailModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+}
+
+projectCards.forEach((card) => {
+    card.addEventListener('click', () => openProjectDetail(card));
+
+    card.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openProjectDetail(card);
+        }
+    });
+});
+
+projectDetailClose.addEventListener('click', closeProjectDetail);
+projectDetailX.addEventListener('click', closeProjectDetail);
+projectDetailBackdrop.addEventListener('click', closeProjectDetail);
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && projectDetailModal.classList.contains('is-open')) {
+        closeProjectDetail();
+    }
+});
