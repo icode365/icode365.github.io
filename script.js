@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     resetBars();
                 }
             },
-            { threshold: 0.35 }
+            {threshold: 0.35}
         );
 
         statsObserver.observe(statsSection);
@@ -108,14 +108,14 @@ document.addEventListener('DOMContentLoaded', () => {
             yearContainer.innerHTML = '';
             // Use 0000 as base to ensure we have 4 columns
             const startYear = "0000";
-            
+
             console.log("Initializing Odometer Columns");
-            
+
             startYear.split('').forEach((_, i) => {
                 const column = document.createElement('div');
                 column.className = 'year-digit-column';
                 column.dataset.index = i;
-                
+
                 // Add digits 0-9 to each column
                 for (let n = 0; n < 10; n++) {
                     const item = document.createElement('div');
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const rect = experienceSection.getBoundingClientRect();
             const sectionHeight = experienceSection.offsetHeight;
             const viewportHeight = window.innerHeight;
-            
+
             // Progress is 0 when section starts entering, 1 when it's fully scrolled
             // But since it's sticky, we care about the scroll within the 500vh
             const scrolled = -rect.top;
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Map progress to year 2019 - 2025
             const currentYear = Math.floor(2019 + progress * (2025 - 2019 + 0.99));
-            
+
             if (currentYear !== lastYear) {
                 console.log(`Experience Year Update: ${currentYear}`);
                 // Update Odometer
@@ -150,12 +150,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 const columns = yearContainer.querySelectorAll('.year-digit-column');
                 // Ensure we have exactly 4 digits for years 2019-2025
                 const paddedYearStr = yearStr.padStart(4, '0');
-                
+
                 if (columns.length === 0) {
                     console.warn("No odometer columns found, re-initializing.");
                     initYearOdometer();
                 }
-                
+
                 paddedYearStr.split('').forEach((digit, i) => {
                     const col = yearContainer.children[i];
                     if (col) {
@@ -172,19 +172,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     expContent.style.animation = 'none';
                     expContent.offsetHeight; // trigger reflow
                     expContent.style.animation = 'content-slide-up 0.5s ease-out';
-                    
+
                     expYearLabel.textContent = data.yearRange;
                     expRole.textContent = data.role;
                     expCompany.textContent = data.company;
                     expDesc.textContent = data.desc;
                 }
-                
+
                 lastYear = currentYear;
             }
         };
 
         initYearOdometer();
-        window.addEventListener('scroll', updateExperience, { passive: true });
+        window.addEventListener('scroll', updateExperience, {passive: true});
         window.addEventListener('resize', updateExperience);
         updateExperience();
     }
@@ -207,7 +207,8 @@ document.addEventListener('DOMContentLoaded', () => {
             demoThumbnail.classList.add('opacity-0');
             demoVideo.classList.remove('opacity-0');
             demoVideo.classList.add('opacity-100');
-            demoVideo.play().catch(() => {});
+            demoVideo.play().catch(() => {
+            });
         };
 
         demoCard.addEventListener('mouseenter', showVideo);
@@ -229,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Clone cards for infinite loop
         const firstClones = cards.map(card => card.cloneNode(true));
         const lastClones = cards.map(card => card.cloneNode(true));
-        
+
         firstClones.forEach(clone => slider.appendChild(clone));
         lastClones.reverse().forEach(clone => slider.insertBefore(clone, slider.firstChild));
 
@@ -242,17 +243,17 @@ document.addEventListener('DOMContentLoaded', () => {
             // Change these factors to make cards wider/narrower
             if (window.innerWidth >= 1024) return slider.offsetWidth / 3;
             if (window.innerWidth >= 768) return slider.offsetWidth / 1.5;
-            return slider.offsetWidth * 0.8; 
+            return slider.offsetWidth * 0.8;
         };
 
         const updateSlider = (smooth = true) => {
             const cardWidth = getCardWidth();
             const gap = window.innerWidth >= 768 ? 24 : 16;
-            
+
             allCards.forEach(card => {
                 card.style.width = `${cardWidth}px`;
                 card.classList.remove('active-card');
-                
+
                 // Pause videos on inactive cards
                 const video = card.querySelector('video');
                 if (video) {
@@ -269,7 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             slider.style.transition = smooth ? 'transform 0.7s cubic-bezier(0.23, 1, 0.32, 1)' : 'none';
             slider.style.transform = `translateX(-${totalOffset}px)`;
-            
+
             // Highlight center card
             allCards[currentIndex].classList.add('active-card');
         };
@@ -315,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
         prevBtn.addEventListener('click', prevSlide);
 
         window.addEventListener('resize', () => updateSlider(false));
-        
+
         // Initial setup
         updateSlider(false);
         startAutoSlide();
@@ -423,6 +424,7 @@ const projectDetailX = document.getElementById('project-detail-x');
 const projectDetailStage = document.getElementById('project-detail-stage');
 const projectDetailTitle = document.getElementById('project-detail-title');
 const projectDetailImage = document.getElementById('project-detail-image');
+const projectDetailVideo = document.getElementById('project-detail-video');
 const projectDetailDescription = document.getElementById('project-detail-description');
 const projectDetailDetails = document.getElementById('project-detail-details');
 const projectDetailTags = document.getElementById('project-detail-tags');
@@ -431,6 +433,7 @@ function openProjectDetail(card) {
     const title = card.dataset.projectTitle || 'Project Details';
     const stage = card.dataset.projectStage || 'STAGE 00';
     const image = card.dataset.projectImage || '';
+    const video = card.dataset.projectVideo || '';
     const description = card.dataset.projectDescription || '';
     const details = card.dataset.projectDetails || '';
     const tags = card.dataset.projectTags
@@ -444,6 +447,26 @@ function openProjectDetail(card) {
     projectDetailDescription.textContent = description;
     projectDetailDetails.textContent = details;
 
+    projectDetailVideo.pause();
+    projectDetailVideo.removeAttribute('src');
+    projectDetailVideo.load();
+
+    if (video) {
+        projectDetailImage.classList.add('hidden');
+
+        projectDetailVideo.src = video;
+        projectDetailVideo.classList.remove('hidden');
+        projectDetailVideo.currentTime = 0;
+        projectDetailVideo.play().catch(() => {
+        });
+    } else {
+        projectDetailVideo.classList.add('hidden');
+
+        projectDetailImage.src = image;
+        projectDetailImage.alt = `${title} preview`;
+        projectDetailImage.classList.remove('hidden');
+    }
+
     projectDetailTags.innerHTML = tags
         .map((tag) => `<span class="px-2 py-1 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">${tag}</span>`)
         .join('');
@@ -456,6 +479,9 @@ function openProjectDetail(card) {
 }
 
 function closeProjectDetail() {
+    projectDetailVideo.pause();
+    projectDetailVideo.removeAttribute('src');
+    projectDetailVideo.load();
     projectDetailModal.classList.add('hidden');
     projectDetailModal.classList.remove('is-open');
     projectDetailModal.setAttribute('aria-hidden', 'true');

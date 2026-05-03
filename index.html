@@ -291,6 +291,7 @@
                          data-project-title="Infinity Workshop"
                          data-project-stage="STAGE 01"
                          data-project-image="Videos/demo_thumbnail.png"
+                         data-project-video="Videos/infinity_workshop_demo.mp4"
                          data-project-tags="C# // EDITOR_API,ASSET_PIPELINE,UNITY_PACKAGE"
                          data-project-description="A custom asset handling solution for Unity projects. Built as a complete pipeline to simplify asset organization, processing, and editor-side workflows."
                          data-project-details="Infinity Workshop focuses on improving Unity production workflows by reducing repeated manual asset setup. It includes custom editor tooling, asset handling rules, and pipeline-friendly structure so projects stay cleaner and easier to maintain as they scale.">
@@ -330,7 +331,7 @@
                          data-project-title="LOCAL MULTIPLYER"
                          data-project-stage="STAGE 02"
                          data-project-image="images/meta-shared-spatial-anchors.webp"
-                         data-project-tags="C# // UNITY,SPATIAL_ANCHORS,META_SERVICES,FUSION_MULTIPLAYER,PASSTHROUGH"
+                         data-project-tags="C# // UNITY,SPATIAL_ANCHORS,META_XR_SDK,FUSION_MULTIPLAYER,PASSTHROUGH"
                          data-project-description="Creating XR application that enables Local Multiplayer in XR with
                     Passthrough."
                          data-project-details="Built a POC using Meta Spatial Anchors to enable shared, persistent AR space
@@ -457,6 +458,7 @@ Integrated Passthrough and XR UI systems to enhance immersion and usability acro
                          data-project-title="POKEDEX"
                          data-project-stage="STAGE 06"
                          data-project-image="images/pokedex_api.png"
+                         data-project-video="Videos/Pokedex_API_Full_Demo_Recording.mp4"
                          data-project-tags="C# // UNITY,REST API,WEB REQUEST,ASYNCHRONOUS"
                          data-project-description="The system fetches Pokémon data in real time and displays structured information in a clean interface."
                          data-project-details="PokeInfo is a lightweight Pokédex application that pulls real-time Pokémon data using a public API.
@@ -627,9 +629,17 @@ Instead of static entries, every search fetches live stats, types, and informati
         <div class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-6 p-4 md:p-6">
             <div class="border-2 border-secondary-fixed/40 bg-surface-container-highest/40 p-2">
                 <img id="project-detail-image"
-                     class="w-full aspect-square object-cover grayscale contrast-125"
+                     class="w-full aspect-square object-cover"
                      src=""
                      alt="Selected project preview"/>
+
+                <video id="project-detail-video"
+                       class="project-detail-media hidden w-full aspect-square object-cover contrast-125"
+                       src=""
+                       muted
+                       playsinline
+                       loop
+                       preload="metadata"></video>
             </div>
 
             <div class="flex flex-col justify-between gap-6">
