@@ -77,6 +77,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const expCompany = document.getElementById('exp-company');
     const expDesc = document.getElementById('exp-desc');
 
+    // ===== ABOUT SECTION SCROLL ANIMATION =====
+    const aboutSection = document.getElementById('about');
+    const aboutText = document.querySelector('.about-text');
+
+    let aboutLastProgress = -1;
+
+    const updateAbout = () => {
+        if (!aboutSection || !aboutText) return;
+
+        const rect = aboutSection.getBoundingClientRect();
+        const sectionHeight = aboutSection.offsetHeight;
+        const viewportHeight = window.innerHeight;
+
+        const scrolled = -rect.top;
+        const scrollRange = sectionHeight - viewportHeight;
+
+        const progress = Math.max(0, Math.min(1, scrolled / scrollRange));
+
+        // avoid unnecessary DOM updates
+        if (Math.abs(progress - aboutLastProgress) < 0.01) return;
+
+        aboutText.style.opacity = progress;
+        aboutText.style.transform = `translateY(${50 * (1 - progress)}px)`;
+
+        aboutLastProgress = progress;
+    };
+
     const experienceData = [
         {
             yearRange: "2019 - 2020",
@@ -184,9 +211,17 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         initYearOdometer();
-        window.addEventListener('scroll', updateExperience, {passive: true});
-        window.addEventListener('resize', updateExperience);
+        window.addEventListener('scroll', () => {
+            updateExperience();
+            updateAbout();
+        }, {passive: true});
+
+        window.addEventListener('resize', () => {
+            updateExperience();
+            updateAbout();
+        });
         updateExperience();
+        updateAbout();
     }
 
     const demoVideo = document.querySelector('.demo-video');
@@ -508,3 +543,45 @@ document.addEventListener('keydown', (event) => {
         closeProjectDetail();
     }
 });
+
+const RESUME_PATH = '/assets/Ashutosh Bante\'s Resume.pdf';
+
+// Download handler
+const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = RESUME_PATH;
+    link.download = 'Ashutosh Bante\'s Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+};
+
+// View handler
+const handleView = () => {
+    window.open(RESUME_PATH, '_blank', 'noopener,noreferrer');
+};
+
+// Bind buttons
+document.querySelectorAll('.resume-download').forEach(btn => {
+    btn.addEventListener('click', handleDownload);
+});
+
+document.querySelectorAll('.resume-view').forEach(btn => {
+    btn.addEventListener('click', handleView);
+});
+
+const hint = document.getElementById('fs-hint');
+const btn = document.getElementById('fs-btn');
+
+if (!localStorage.getItem('fs_seen')) {
+    hint.style.display = 'flex';
+}
+
+btn.addEventListener('click', async () => {
+    await document.documentElement.requestFullscreen();
+    localStorage.setItem('fs_seen', '1');
+    hint.remove();
+});
+
+// auto-dismiss after 5s
+setTimeout(() => hint?.remove(), 5000);

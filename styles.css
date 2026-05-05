@@ -152,6 +152,16 @@ body {
     scrollbar-color: #353535 transparent;
 }
 
+.about-section {
+    height: 200vh;
+}
+
+.about-text {
+    opacity: 0;
+    transform: translateY(50px);
+    will-change: transform, opacity;
+}
+
 #projects .sticky-stage-pin {
     overflow-y: hidden;
     overflow-x: hidden;

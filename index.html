@@ -78,18 +78,26 @@
     </script>
 </head>
 <body class="bg-background text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed">
+<div id="fs-hint" class="fixed inset-0 flex flex-col items-center justify-center bg-black/60 text-white text-lg z-50 gap-4">
+    <div class="text-center font-space-grotesk flex flex-col items-center gap-4">
+        <p>Best experienced in full screen</p>
+        <button id="fs-btn"
+                class="border-4 border-outline-variant text-on-background text-2xl px-12 py-4 font-black font-space-grotesk tracking-widest hover:bg-surface-container-highest/50 backdrop-blur transition-all">
+            Go Fullscreen
+        </button>
+    </div>
+</div>
 <div class="pacman-bg">
     <div class="pacman"></div>
 </div>
 
 <!-- TopAppBar -->
 <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-20 bg-background/80 backdrop-blur-md border-b-4 border-[#353535] shadow-[0_4px_0_0_rgba(234,234,0,0.2)]">
-    <!--    <div class="text-2xl font-black text-[#eaea00] tracking-widest font-space-grotesk uppercase tracking-tighter">-->
-    <!--        PLAYER_1-->
-    <!--    </div>-->
     <div class="hidden md:flex gap-8 items-center h-full">
         <a class="nav-link font-space-grotesk uppercase tracking-tighter hover:bg-[#353535]/50 transition-colors duration-100 active:translate-y-1"
            href="#hero">HOME</a>
+        <a class="nav-link font-space-grotesk uppercase tracking-tighter hover:text-[#00fbfb] hover:bg-[#353535]/50 transition-colors duration-100 active:translate-y-1"
+           href="#about">BIO</a>
         <a class="nav-link font-space-grotesk uppercase tracking-tighter hover:text-[#00fbfb] hover:bg-[#353535]/50 transition-colors duration-100 active:translate-y-1"
            href="#stats">STATS</a>
         <a class="nav-link font-space-grotesk uppercase tracking-tighter hover:text-[#00fbfb] hover:bg-[#353535]/50 transition-colors duration-100 active:translate-y-1"
@@ -119,6 +127,7 @@
         <span class="material-symbols-outlined text-4xl">close</span>
     </button>
     <a class="nav-link text-3xl font-black font-space-grotesk uppercase tracking-tighter" href="#hero">HOME</a>
+    <a class="nav-link text-3xl font-black font-space-grotesk uppercase tracking-tighter" href="#about">BIO</a>
     <a class="nav-link text-3xl font-black font-space-grotesk uppercase tracking-tighter" href="#stats">STATS</a>
     <a class="nav-link text-3xl font-black font-space-grotesk uppercase tracking-tighter"
        href="#projects">HIGHLIGHTS</a>
@@ -150,33 +159,49 @@
             <p class="text-lg md:text-2xl font-label uppercase tracking-[0.1em] md:tracking-[0.2em] text-secondary-fixed mb-8 md:mb-12 drop-shadow-[0_0_10px_rgba(0,251,251,0.5)]">
                 Unity Developer
             </p>
-
-            <div class="glass-panel mx-auto max-w-2xl p-5 md:p-6 border-l-4 border-primary-fixed text-left shadow-[4px_4px_0_0_rgba(0,251,251,0.35)]">
-                <div class="flex items-center gap-3 mb-3">
-                        <span class="material-symbols-outlined text-primary-fixed"
-                              style="font-variation-settings: 'FILL' 1;">badge</span>
-                    <span class="font-label text-xs md:text-sm uppercase tracking-[0.25em] text-secondary-fixed font-bold">
-                            Player Bio
-                        </span>
-                </div>
-                <p class="font-body text-sm md:text-base leading-relaxed text-on-background/85">
-                    Unity Developer with ~3 years of experience building and maintaining VR training applications using
-                    the Unity engine and C#. Skilled in developing scalable runtime systems, modular content pipelines,
-                    and performance-optimized immersive environments. Experienced working across diverse projects and
-                    responsibilities, including leading small development teams, coordinating with clients, scheduling
-                    development tasks, conducting product demos, and participating in technical interviews for new
-                    candidates. Comfortable operating across the full development lifecycle—collaborating with artists
-                    and designers, building internal tools and delivering stable production builds. Seeking to apply
-                    solid Unity engineering skills and creative thinking to contribute to game development or
-                    interactive media teams.
-                </p>
+            <div class="flex flex-col md:flex-row gap-6 justify-center">
+                <button class="resume-download bg-primary-fixed text-on-primary-fixed text-2xl px-12 py-4 font-black font-space-grotesk tracking-widest border-b-8 border-on-primary-container hover:brightness-110 active:translate-y-2 active:border-b-0 transition-all shadow-[0_0_20px_rgba(234,234,0,0.4)]">
+                    Get Resume
+                </button>
             </div>
-
         </div>
         <!-- Floating Decoration -->
         <div class="absolute bottom-10 right-10 hidden lg:block opacity-20">
             <span class="material-symbols-outlined text-9xl text-primary-fixed"
                   style="font-variation-settings: 'FILL' 1;">sports_esports</span>
+        </div>
+    </section>
+
+    <section id="about" class="about-section top-0 h-screen flex items-start justify-center pt-[25vh]">
+        <div class="glass-panel mx-auto max-w-2xl p-5 md:p-6 border-l-4 border-primary-fixed text-left shadow-[4px_4px_0_0_rgba(0,251,251,0.35)]">
+            <div class="flex items-center gap-3 mb-3">
+                        <span class="material-symbols-outlined text-primary-fixed"
+                              style="font-variation-settings: 'FILL' 1;">badge</span>
+                <span class="font-label text-xs md:text-sm uppercase tracking-[0.25em] text-secondary-fixed font-bold">
+                            Player Bio
+                        </span>
+            </div>
+            <p class=" about-text font-body text-sm md:text-base leading-relaxed text-on-background/85">
+                Unity Developer with ~3 years of experience building and maintaining VR training applications
+                using
+                the Unity engine and C#. Skilled in developing scalable runtime systems, modular content
+                pipelines,
+                and performance-optimized immersive environments. Experienced working across diverse projects
+                and
+                responsibilities, including leading small development teams, coordinating with clients,
+                scheduling
+                development tasks, conducting product demos, and participating in technical interviews for new
+                candidates. Comfortable operating across the full development lifecycle—collaborating with
+                artists
+                and designers, building internal tools and delivering stable production builds. Seeking to apply
+                solid Unity engineering skills and creative thinking to contribute to game development or
+                interactive media teams.
+            </p>
+            <div class="flex flex-col md:flex-row gap-6 justify-center">
+                <button class="resume-download bg-primary-fixed text-on-primary-fixed text-2xl px-12 py-4 font-black font-space-grotesk tracking-widest border-b-8 border-on-primary-container hover:brightness-110 active:translate-y-2 active:border-b-0 transition-all shadow-[0_0_20px_rgba(234,234,0,0.4)]">
+                    Get Resume
+                </button>
+            </div>
         </div>
     </section>
     <!-- Section 2: Qualifications -->
@@ -591,6 +616,8 @@ Instead of static entries, every search fetches live stats, types, and informati
            href="https://github.com/icode365">GITHUB</a>
         <a class="font-inter text-xs uppercase tracking-widest text-[#e2e2e2] opacity-70 hover:text-[#eaea00] hover:skew-x-2 transition-transform"
            href="https://icode365.itch.io/">Itch.io</a>
+        <a class="resume-download font-inter text-xs uppercase tracking-widest text-[#e2e2e2] opacity-70 hover:text-[#eaea00] hover:skew-x-2 transition-transform"
+           href="#">Resume</a>
     </div>
     <div class="font-inter text-xs uppercase tracking-widest text-[#ffb4a8] opacity-80">
         2026 GAME_OVER_MAN // NO RIGHTS RESERVED
