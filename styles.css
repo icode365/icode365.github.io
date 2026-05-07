@@ -152,14 +152,33 @@ body {
     scrollbar-color: #353535 transparent;
 }
 
-.about-section {
-    height: 200vh;
+/* About: scroll-typed word reveal */
+.about-word {
+    opacity: 0;
+    display: inline-block;
+    transition: opacity 120ms linear;
+    will-change: opacity;
 }
 
-.about-text {
-    opacity: 0;
-    transform: translateY(50px);
-    will-change: transform, opacity;
+.about-word.is-visible {
+    opacity: 1;
+}
+
+.about-word.is-caret {
+    background: #eaea00;
+    color: #1d1d00;
+    padding: 0.1em 0.18em;
+    box-shadow: 0 0 0 2px rgba(234, 234, 0, 0.25), 0 0 14px rgba(234, 234, 0, 0.2);
+    animation: about-caret-blink 0.85s steps(2, end) infinite;
+}
+
+@keyframes about-caret-blink {
+    0%, 45% {
+        opacity: 1;
+    }
+    50%, 100% {
+        opacity: 0.35;
+    }
 }
 
 #projects .sticky-stage-pin {

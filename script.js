@@ -77,31 +77,62 @@ document.addEventListener('DOMContentLoaded', () => {
     const expCompany = document.getElementById('exp-company');
     const expDesc = document.getElementById('exp-desc');
 
-    // ===== ABOUT SECTION SCROLL ANIMATION =====
+    // ===== ABOUT SECTION: SCROLL-TYPED WORD REVEAL =====
     const aboutSection = document.getElementById('about');
-    const aboutText = document.querySelector('.about-text');
+    const aboutTyped = document.getElementById('about-typed');
+    let aboutWordSpans = [];
+    let aboutLastTypedCount = -1;
 
-    let aboutLastProgress = -1;
+    const initAboutTyping = () => {
+        if (!aboutTyped) return;
 
-    const updateAbout = () => {
-        if (!aboutSection || !aboutText) return;
+        const rawText = (aboutTyped.textContent || '').replace(/\s+/g, ' ').trim();
+        if (!rawText) return;
+
+        const words = rawText.split(' ');
+        const frag = document.createDocumentFragment();
+        aboutWordSpans = [];
+
+        words.forEach((word, i) => {
+            const span = document.createElement('span');
+            span.className = 'about-word';
+            span.textContent = word;
+            aboutWordSpans.push(span);
+            frag.appendChild(span);
+            if (i < words.length - 1) frag.appendChild(document.createTextNode(' '));
+        });
+
+        aboutTyped.textContent = '';
+        aboutTyped.appendChild(frag);
+        aboutLastTypedCount = -1;
+    };
+
+    const updateAboutTyping = () => {
+        if (!aboutSection || !aboutTyped || aboutWordSpans.length === 0) return;
 
         const rect = aboutSection.getBoundingClientRect();
         const sectionHeight = aboutSection.offsetHeight;
         const viewportHeight = window.innerHeight;
 
         const scrolled = -rect.top;
-        const scrollRange = sectionHeight - viewportHeight;
-
+        const scrollRange = Math.max(1, sectionHeight - viewportHeight);
         const progress = Math.max(0, Math.min(1, scrolled / scrollRange));
 
-        // avoid unnecessary DOM updates
-        if (Math.abs(progress - aboutLastProgress) < 0.01) return;
+        const totalWords = aboutWordSpans.length;
+        const typedCount = Math.min(totalWords, Math.floor(progress * (totalWords + 1)));
 
-        aboutText.style.opacity = progress;
-        aboutText.style.transform = `translateY(${50 * (1 - progress)}px)`;
+        if (typedCount === aboutLastTypedCount) return;
 
-        aboutLastProgress = progress;
+        for (let i = 0; i < totalWords; i++) {
+            const el = aboutWordSpans[i];
+            const shouldBeVisible = i < typedCount || i === typedCount;
+            const isCaret = i === typedCount && typedCount < totalWords;
+
+            el.classList.toggle('is-visible', shouldBeVisible);
+            el.classList.toggle('is-caret', isCaret);
+        }
+
+        aboutLastTypedCount = typedCount;
     };
 
     const experienceData = [
@@ -127,6 +158,10 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: "Spearheading core XR systems development. Architected modular interaction frameworks and optimized rendering pipelines for standalone VR."
         }
     ];
+
+    initAboutTyping();
+
+    let updateExperience = null;
 
     if (experienceSection && yearContainer) {
         // Initialize Year Odometer
@@ -156,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let lastYear = null;
 
-        const updateExperience = () => {
+        updateExperience = () => {
             const rect = experienceSection.getBoundingClientRect();
             const sectionHeight = experienceSection.offsetHeight;
             const viewportHeight = window.innerHeight;
@@ -211,18 +246,17 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         initYearOdometer();
-        window.addEventListener('scroll', () => {
-            updateExperience();
-            updateAbout();
-        }, {passive: true});
-
-        window.addEventListener('resize', () => {
-            updateExperience();
-            updateAbout();
-        });
         updateExperience();
-        updateAbout();
     }
+
+    const onScrollOrResize = () => {
+        if (typeof updateExperience === 'function') updateExperience();
+        updateAboutTyping();
+    };
+
+    window.addEventListener('scroll', onScrollOrResize, {passive: true});
+    window.addEventListener('resize', onScrollOrResize);
+    onScrollOrResize();
 
     const demoVideo = document.querySelector('.demo-video');
     const demoThumbnail = document.querySelector('.demo-thumbnail');

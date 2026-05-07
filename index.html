@@ -174,37 +174,31 @@
         </div>
     </section>
 
-    <section id="about" class="about-section top-0 h-screen flex items-start justify-center pt-[25vh]">
+    <section class="sticky-stage pixel-grid" id="about" style="--stage-height: 240vh;">
+        <div class="sticky-stage-pin">
+            <div class="w-full flex flex-col items-center">
+                <div class="flex items-center justify-center gap-3 text-center">
+                    <span class="font-retro md:text-6xl uppercase tracking-[0.25em] text-secondary-fixed font-bold">
+                        Player Bio
+                    </span>
+                </div>
 
-        <div class="flex items-center gap-3 mb-3">
-                        <span class="material-symbols-outlined text-primary-fixed"
-                              style="font-variation-settings: 'FILL' 1;">badge</span>
-            <span class="font-retro md:text-sm uppercase tracking-[0.25em] text-secondary-fixed font-bold">
-                            Player Bio
-                        </span>
-        </div>
+                <div class="glass-panel w-full max-w-6xl mt-6 p-6 md:p-10 border-l-4 border-primary-fixed text-left shadow-[4px_4px_0_0_rgba(0,251,251,0.35)]">
+                    <p id="about-typed" class="font-body text-sm md:text-base leading-relaxed text-on-background/85">
+                        Unity Developer with 4 years of experience building and maintaining VR training applications
+                        using the Unity engine and C#. Skilled in developing scalable runtime systems, modular content
+                        pipelines, and performance - optimized immersive experiences. Experienced working across diverse projects
+                        and responsibilities, including planning features, researching experimental workflows, leading development teams, 
+                        coordinating with clients, scheduling
+                        development tasks, conducting demos, & participating in technical interviews.
+                    </p>
 
-        <div class="glass-panel mx-auto max-w-2xl p-5 md:p-6 border-l-4 border-primary-fixed text-left shadow-[4px_4px_0_0_rgba(0,251,251,0.35)]">
-            <p class=" about-text font-body text-sm md:text-base leading-relaxed text-on-background/85">
-                Unity Developer with ~3 years of experience building and maintaining VR training applications
-                using
-                the Unity engine and C#. Skilled in developing scalable runtime systems, modular content
-                pipelines,
-                and performance-optimized immersive environments. Experienced working across diverse projects
-                and
-                responsibilities, including leading small development teams, coordinating with clients,
-                scheduling
-                development tasks, conducting product demos, and participating in technical interviews for new
-                candidates. Comfortable operating across the full development lifecycle—collaborating with
-                artists
-                and designers, building internal tools and delivering stable production builds. Seeking to apply
-                solid Unity engineering skills and creative thinking to contribute to game development or
-                interactive media teams.
-            </p>
-            <div class="flex flex-col md:flex-row gap-6 justify-center">
-                <button class="resume-download bg-primary-fixed text-on-primary-fixed text-2xl px-12 py-4 font-black font-space-grotesk tracking-widest border-b-8 border-on-primary-container hover:brightness-110 active:translate-y-2 active:border-b-0 transition-all shadow-[0_0_20px_rgba(234,234,0,0.4)]">
-                    Get Resume
-                </button>
+                    <div class="flex flex-col md:flex-row gap-6 justify-center mt-8">
+                        <button class="resume-download bg-primary-fixed text-on-primary-fixed text-2xl px-12 py-4 font-black font-space-grotesk tracking-widest border-b-8 border-on-primary-container hover:brightness-110 active:translate-y-2 active:border-b-0 transition-all shadow-[0_0_20px_rgba(234,234,0,0.4)]">
+                            Get Resume
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -222,10 +216,10 @@
                                 <span class="material-symbols-outlined text-secondary-fixed">category</span>
                                 <span class="font-label uppercase font-bold text-lg">Unity Engine</span>
                             </div>
-                            <span class="text-secondary-fixed font-mono">LVL 85</span>
+                            <span class="text-secondary-fixed font-mono">LVL 90</span>
                         </div>
                         <div class="h-8 bg-surface-container-highest/50 flex p-1 border-2 border-surface-bright backdrop-blur">
-                            <div class="skill-bar h-full bg-secondary-fixed" data-level="85"
+                            <div class="skill-bar h-full bg-secondary-fixed" data-level="90"
                                  style="width: 0; box-shadow: 0 0 10px #00fbfb;"></div>
                             <div class="h-full w-[5%] bg-transparent"></div>
                         </div>
@@ -237,10 +231,10 @@
                                 <span class="material-symbols-outlined text-secondary-fixed">terminal</span>
                                 <span class="font-label uppercase font-bold text-lg">C# Scripting</span>
                             </div>
-                            <span class="text-secondary-fixed font-mono">LVL 70</span>
+                            <span class="text-secondary-fixed font-mono">LVL 85</span>
                         </div>
                         <div class="h-8 bg-surface-container-highest/50 flex p-1 border-2 border-surface-bright backdrop-blur">
-                            <div class="skill-bar h-full bg-secondary-fixed" data-level="70"
+                            <div class="skill-bar h-full bg-secondary-fixed" data-level="85"
                                  style="width: 0; box-shadow: 0 0 10px #00fbfb;"></div>
                             <div class="h-full w-[12%] bg-transparent"></div>
                         </div>
@@ -252,11 +246,11 @@
                                 <span class="material-symbols-outlined text-secondary-fixed">auto_awesome</span>
                                 <span class="font-label uppercase font-bold text-lg">AI Workflow</span>
                             </div>
-                            <span class="text-tertiary-fixed-dim font-mono">LVL 60</span>
+                            <span class="text-tertiary-fixed-dim font-mono">LVL 70</span>
                         </div>
                         <div class="h-8 bg-surface-container-highest/50 flex p-1 border-2 border-surface-bright backdrop-blur">
-                            <div class="skill-bar h-full bg-tertiary-fixed-dim" data-level="60"
-                                 style="width: 0; box-shadow: 0 0 10px #ffb4a8;"></div>
+                            <div class="skill-bar h-full bg-tertiary-fixed-dim" data-level="70"
+                                 style="width: 0; box-shadow: 0 0 10px #00fbfb;"></div>
                             <div class="h-full w-[28%] bg-transparent"></div>
                         </div>
                     </div>
@@ -383,7 +377,7 @@
                             <div class="flex flex-wrap gap-2 mt-auto">
                                 <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">META_XR_SDK</span>
                                 <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">PASSTHROUGH</span>
-                                <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border border-secondary-fixed/50">MULTIPLAYER</span>
+                                <span class="px-2 py-0.5 bg-[#353535] text-[10px] font-mono border bordFabouter-secondary-fixed/50">MULTIPLAYER</span>
                             </div>
                         </div>
                     </div>
