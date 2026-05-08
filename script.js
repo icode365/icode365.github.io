@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const statsSection = document.getElementById('stats');
-    const bars = document.querySelectorAll('. border-on-secondary-container');
+    const bars = document.querySelectorAll('.skill-bar');
 
     if (statsSection && bars.length) {
         const resetBars = () => {
@@ -137,13 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const experienceData = [
         {
-            yearRange: "2018 - 2018",
-            years: [2018, 2018],
-            role: "MARKETTING - INTERN",
-            company: "GIRLSCRIPT FOUNDATION",
-            desc: "Undertook various marketing tasks for the organization's events and campaigns."
-        },
-        {
             yearRange: "2019 - 2020",
             years: [2019, 2020],
             role: "GAME DEVELOPER",
@@ -153,23 +146,16 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             yearRange: "2021 - 2022",
             years: [2021],
-            role: "UNITY GAME DEVELOPER - INTERN",
+            role: "UNITY GAME DEVELOPER",
             company: "One Learning",
             desc: "Developed educational gamified puzzles for medical concepts."
         },
         {
-            yearRange: "2022 - 2024",
-            years: [2022, 2023, 2024],
-            role: "SOFTWARE DEVELOPMENT ENGINEER - I",
+            yearRange: "2022 - 2025",
+            years: [2022, 2023, 2024, 2025],
+            role: "SENIOR UNITY DEVELOPER",
             company: "AUTOVRSE",
-            desc: "Created VR training experiences for various clients, alongwith Phsyics based interactions & Dyamic UI systems."
-        },        
-        {
-            yearRange: "2024 - 2025",
-            years: [2024, 2025],
-            role: "SOFTWARE DEVELOPMENT ENGINEER - II",
-            company: "AUTOVRSE",
-            desc: "Spearheading core Unity tools development. Architected modular, scalable & optimized art assets pipeline with INFINITY WORKSHOP Tool."
+            desc: "Spearheading core XR systems development. Architected modular interaction frameworks and optimized rendering pipelines for standalone VR."
         }
     ];
 
