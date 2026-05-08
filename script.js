@@ -396,7 +396,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = Array.from(navLinks).map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
 
     if (navLinks.length && sections.length) {
-        const activeClasses = ['text-[#eaea00]', 'md:border-b-4', 'md:border-[#eaea00]', 'md:pb-1'];
+        const activeClasses = ['text-[#eaea00]', 'md:xb-4', 'md:border-[#eaea00]', 'md:pb-1'];
         const inactiveClasses = ['text-[#e2e2e2]'];
 
         const observerOptions = {
